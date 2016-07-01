@@ -1,0 +1,426 @@
+@charset "utf-8";
+
+.info_container{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.info_contents{
+		width: 700px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	color:#121212;
+	overflow: hidden;
+}
+
+.info_contents h2{
+	height: 28px;
+	margin-bottom: 20px;
+	padding-left: 15px;
+	line-height: 28px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.info_contents h2.title01{
+	background: url(../images/info/t_bar_bg.gif) no-repeat;
+}
+
+.info_contents h2.title02{
+	background: url(../images/mypage/t_bar02.gif) no-repeat;
+}
+
+#side_menu{
+	width: 220px;
+	height: 374px;
+	padding: 20px;
+	background: url(../images/info/side_menu_bg.gif) no-repeat;
+	color:#121212;
+}
+
+#side_menu a{color: #3a0094;}
+
+#side_menu h3{
+	padding-left: 17px;
+	background: url(../images/info/side_menu_icon.gif) 0 3px no-repeat;
+	font-size: 14px;
+}
+
+#side_menu ul{
+	margin: 10px 20px;
+}
+
+.mypage_contents{
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	color: #333;
+}
+
+.mypage_contents2{
+	width: 720px;
+	margin-left:10px;
+	margin-left:10px;
+	overflow: hidden;
+	color: #333;
+}
+
+/*----- table-----*/
+
+.req{
+	width: 30px;
+	line-height: 19px;
+	text-indent: -9999px;
+	background: url(../images/mypage/hissu_icon.gif) no-repeat;
+	float: right;
+}
+
+.req2,.opt{
+	width: 30px;
+	line-height: 19px;
+	text-indent: -9999px;
+	background: url(../images/mypage/nini_icon.gif) no-repeat;
+	float: right;
+}
+
+/* join_user -------------------------------------*/
+
+#form_join_user table{
+	width: 940px;
+	margin-left: 10px;
+		border: 3px solid #eee;
+		border-collapse:separate;
+}
+
+#form_join_user td{
+	padding: 10px;
+		border: 3px solid #eee;
+
+}
+
+#form_join_user #counter{
+	width: 960px;
+	height: 80px;
+	background: url(../images/mypage/touroku_counter.gif) no-repeat;
+	overflow: hidden;
+}
+
+#form_join_user #counter ul{
+	width: 210px;
+	margin-top: 17px;
+	margin-left: 685px;
+	overflow: hidden;
+}
+#form_join_user #counter li{
+	width: 30px;
+	float: left;
+	overflow: hidden;
+}
+
+#form_join_user h3{
+	width: 940px;
+	height: 30px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	padding-left: 17px;
+	line-height: 32px;
+	background: url(../images/mypage/t_bar04.gif) no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#form_join_user .button01{
+	margin-top: 20px;
+}
+
+.kiyakuscroll {
+	width: 930px;
+	height: 225px;
+	overflow: auto;
+	border: #999999 1px solid;
+	margin: 0 auto;
+}
+
+.kiyakutitle {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 900;
+	letter-spacing: 0.2em;
+	padding: 0 0 0 15px;
+}
+
+.kiyakuobi {
+	text-align: left;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	padding: 0 0 0 15px;
+}
+
+.kiyakutxt {
+	text-align: left;
+	font-size: 10px;
+	line-height: 1.5em;
+	letter-spacing: 0.2em;
+	padding: 0 15px 13px 15px;
+}
+
+.priv_link {
+	text-decoration: none;
+}
+
+
+/* campaign -------------------------------------*/
+
+#campaign{
+	margin-left: 10px;
+}
+
+#campaign h2{
+	width: 700px;
+	height: 45px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-left: 17px;
+	line-height: 46px;
+	background: url(../images/mypage/t_bar03.gif) no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#campaign h3{
+	width: 700px;
+	height: 27px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-left: 30px;
+	line-height: 27px;
+	background: url(../images/mypage/icon01.gif) no-repeat;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.step_section{
+	width: 700px;
+    overflow: hidden;
+}
+
+.step{
+	width: 124px;
+    height: 42px;
+	padding-left: 25px;
+	line-height: 44px;
+	font-size: 21px;
+	font-weight: bold;
+	color: #fff;
+	background: url(../images/mypage/icon_left.gif) no-repeat;
+	float: left;
+	overflow:hidden;
+    }
+
+.step_text{
+	width: 495px;
+    height: 42px;
+	padding-left: 50px;
+	line-height: 40px;
+	font-size: 21px;
+	color: #333;
+	background: url(../images/mypage/icon_right.gif) no-repeat;
+	float: left;
+	overflow:hidden;
+    }
+
+.step_text_box {
+	width: 480px;
+	margin-left: 200px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+	line-height: 2.5;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+/* join_user -------------------------------------*/
+
+
+#side_menu{
+	width: 220px;
+	height: 374px;
+	padding: 20px;
+	background: url(../images/info/side_menu_bg.gif) no-repeat;
+	color:#121212;
+}
+
+#side_menu h3{
+	padding-left: 17px;
+	background: url(../images/info/side_menu_icon.gif) 0 3px no-repeat;
+	font-size: 14px;
+}
+
+#side_menu ul{
+	margin: 10px 20px;
+}
+
+
+
+#form_mypage table{
+	width: 700px;
+		border: 5px solid #eee;
+		border-collapse:separate;
+}
+
+#form_mypage td{
+	padding: 10px;
+		border: 3px solid #eee;
+
+}
+
+#prof01{
+	line-height: 1.8;
+}
+
+/*touroku_form*/
+
+#form_touroku_user h3{
+	width: 940px;
+	height: 30px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	padding-left: 17px;
+	line-height: 32px;
+	background: url(../images/mypage/t_bar04.gif) no-repeat;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#form_touroku_user .form_table01{
+	width: 300px;
+	margin: 10px auto;
+	margin-top:50px;
+}
+
+#form_touroku_user .form_table01 td{
+	width: 300px;
+	padding: 10px;
+	border:1px solid #ddd;
+}
+
+.form_button02{
+	width: 200px;
+	margin: 10px auto;
+}
+
+.form_button02 td{
+	padding: 5px;
+}
+
+.banner01{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2#kyuzin_keisai {
+	height: 28px;
+	margin-bottom: 20px;
+	padding-left: 15px;
+	line-height: 28px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	background: url(../images/mypage/t_bar05.gif) no-repeat;
+}
+
+/*-----scout-----*/
+#scout.contents_box01 {
+	width: 700px;
+	overflow: hidden;
+}
+#scout.contents_box01 hr.line01{
+	width: 700px;
+	height: 5px;
+	margin-top: 40px;
+	background: url(../images/mypage/t_bar05.gif) no-repeat;
+	overflow: hidden;
+}
+
+#scout.contents_box01 h2{
+	width: 600px;
+	height: 30px;
+	margin-top: 20px;
+	margin-left: 10px;
+	padding-left: 30px;
+	font-size: 21px;
+	line-height: 23px;
+	background: url(../images/mypage/icon02.gif) no-repeat;
+	overflow: hidden;
+}
+
+#scout.contents_box01 h3{
+	width: 500px;
+	height: 30px;
+	margin-top: 10px;
+	padding-left: 10px;
+	font-size: 16px;
+	line-height: 30px;
+	color: #fff;
+	background: url(../images/mypage/t_bar06.gif) no-repeat;
+	overflow: hidden;
+}
+
+#scout.contents_box01 .text_box01{
+	width: 600px;
+	margin-left: 10px;
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+/* contact -------------------------------------*/
+
+#faq.contents_box01{
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+
+#faq.contents_box01 .text_box01{
+	width: 640px;
+	margin-left: 20px;
+}
+
+#faq.contents_box01 h3{
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px dotted #ddd;
+	font-size: 14px;
+	font-weight: bold;
+	color: #4000BC;
+}
+
+#faq.contents_box01 .text_box01 dl{
+	margin-bottom: 30px;
+	border-bottom: 1px dotted #ddd;
+}
+
+#faq.contents_box01 .text_box01 dt{
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #4000BC;
+}
+
+
+
+#faq.contents_box01 .text_box01 span{
+	margin-right: 10px;
+}
+
+#faq.contents_box01 .text_box01 dd{
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #ddd;
+	padding-left: 34px;
+	text-indent: -34px;
+	font-weight: bold;
+}
+
+#faq.contents_box01 .text_box01 dd .answer{
+	color:#E501FA;
+}

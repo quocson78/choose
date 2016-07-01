@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/*----------
+Css navi.css
+----------*/
+
+/* g_navi -------------------------------------*/
+
+#h_navi {
+	height: 20px;
+	margin-top: 5px;
+	margin-left: 7px;
+	margin-bottom: 5px;
+	overflow: hidden;
+/*	background: url(../images/toppage/h_navi.png) no-repeat 0 0;*/
+}
+#h_navi ul {
+	width: 374px;
+}
+#h_navi li {
+	list-style-type: none;
+	float: left;
+}
+#h_navi a {
+	height: 20px;
+	display: block;
+	overflow:hidden;
+	text-indent: -9999px;
+}
+#h_navi01 a { width: 79px; background: url(../images/toppage/h_navi.png) no-repeat 0 0 ;
+}
+#h_navi02 a { width: 79px; margin-left: 16px; background: url(../images/toppage/h_navi.png) no-repeat -95px 0 ;
+}
+#h_navi03 a { width: 79px; margin-left: 16px; background: url(../images/toppage/h_navi.png) no-repeat -190px 0 ;
+}
+#h_navi04 a { width: 90px; margin-left: 15px; background: url(../images/toppage/h_navi.png) no-repeat -284px 0 ;
+}
+
+#h_navi01 a:hover { width: 79px; background: url(../images/toppage/h_navi.png) no-repeat 0 -20px ;
+}
+#h_navi02 a:hover { width: 79px; margin-left: 16px; background: url(../images/toppage/h_navi.png) no-repeat -95px -20px ;
+}
+#h_navi03 a:hover { width: 79px; margin-left: 16px; background: url(../images/toppage/h_navi.png) no-repeat -190px -20px ;
+}
+#h_navi04 a:hover { width: 90px; margin-left: 15px; background: url(../images/toppage/h_navi.png) no-repeat -284px -20px ;
+}
+
+/* g_navi -------------------------------------*/
+
+#g_navi {
+	height: 38px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	background: url(../images/toppage/g_navi.png) no-repeat 0 0;
+}
+#g_navi ul {
+	width: 976px;
+	height: 38px;
+	margin-left: 2px;
+}
+#g_navi li {
+	list-style-type: none;
+	float: left;
+}
+#g_navi a {
+	height: 38px;
+	display: block;
+	text-indent: -9999px;
+}
+#g_navi01 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -2px 0 ;
+}
+#g_navi02 a { width: 49px; background: url(../images/toppage/g_navi.png) no-repeat -52px 0 ;
+}
+#g_navi03 a { width: 51px; background: url(../images/toppage/g_navi.png) no-repeat -101px 0 ;
+}
+#g_navi04 a { width: 76px; background: url(../images/toppage/g_navi.png) no-repeat -152px 0 ;
+}
+#g_navi05 a { width: 60px; background: url(../images/toppage/g_navi.png) no-repeat -228px 0 ;
+}
+#g_navi06 a { width: 75px; background: url(../images/toppage/g_navi.png) no-repeat -288px 0 ;
+}
+#g_navi07 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -363px 0 ;
+}
+#g_navi08 a { width: 73px; background: url(../images/toppage/g_navi.png) no-repeat -413px 0 ;
+}
+#g_navi09 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -486px 0 ;
+}
+#g_navi10 a { width: 51px; background: url(../images/toppage/g_navi.png) no-repeat -536px 0 ;
+}
+#g_navi11 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -587px 0 ;
+}
+#g_navi12 a { width: 84px; background: url(../images/toppage/g_navi.png) no-repeat -637px 0 ;
+}
+#g_navi13 a { width: 74px; background: url(../images/toppage/g_navi.png) no-repeat -721px 0 ;
+}
+#g_navi14 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -795px 0 ;
+}
+#g_navi15 a { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -845px 0 ;
+}
+#g_navi16 a { width: 83px; background: url(../images/toppage/g_navi.png) no-repeat -895px 0 ;
+}
+
+#g_navi01 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -2px -38px;
+}
+#g_navi02 a:hover { width: 49px; background: url(../images/toppage/g_navi.png) no-repeat -52px -38px;
+}
+#g_navi03 a:hover { width: 51px; background: url(../images/toppage/g_navi.png) no-repeat -101px -38px;
+}
+#g_navi04 a:hover { width: 76px; background: url(../images/toppage/g_navi.png) no-repeat -152px -38px;
+}
+#g_navi05 a:hover { width: 60px; background: url(../images/toppage/g_navi.png) no-repeat -228px -38px;
+}
+#g_navi06 a:hover { width: 75px; background: url(../images/toppage/g_navi.png) no-repeat -288px -38px;
+}
+#g_navi07 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -363px -38px;
+}
+#g_navi08 a:hover { width: 73px; background: url(../images/toppage/g_navi.png) no-repeat -413px -38px;
+}
+#g_navi09 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -486px -38px;
+}
+#g_navi10 a:hover { width: 51px; background: url(../images/toppage/g_navi.png) no-repeat -536px -38px;
+}
+#g_navi11 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -587px -38px;
+}
+#g_navi12 a:hover { width: 84px; background: url(../images/toppage/g_navi.png) no-repeat -637px -38px;
+}
+#g_navi13 a:hover { width: 74px; background: url(../images/toppage/g_navi.png) no-repeat -721px -38px;
+}
+#g_navi14 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -795px -38px;
+}
+#g_navi15 a:hover { width: 50px; background: url(../images/toppage/g_navi.png) no-repeat -845px -38px;
+}
+#g_navi16 a:hover { width: 83px; background: url(../images/toppage/g_navi.png) no-repeat -895px -38px;
+}

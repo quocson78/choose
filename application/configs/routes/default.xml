@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+<default>
+    <route>:controller/:action/*</route>
+    <defaults>
+        <controller>index</controller>
+        <action>index</action>
+    </defaults>
+</default>
+<category type="Zend_Controller_Router_Route_Regex">
+    <route>(biyo|relaxation|chiryo|yoga-fitness|esthe|nail|eyelist|biyoshi|biyobuin|therapist|aroma|massage|reflexology|seitai|chiropractic|jusei|massageshi|shinkyu|yoga|fitness|all)</route>
+    <defaults>
+        <controller>category</controller>
+        <action>index</action>
+    </defaults>
+    <map>
+        <category>1</category>
+    </map>
+    <reverse>%s</reverse>
+</category>
+<search type="Zend_Controller_Router_Route_Regex">
+    <route>search</route>
+    <defaults>
+        <controller>search</controller>
+        <action>index</action>
+    </defaults>
+</search>
+<search-feature>
+    <route>:category/feature/:tag</route>
+    <defaults>
+        <controller>feature-search</controller>
+        <action>index</action>
+    </defaults>
+</search-feature>
+<search-line>
+    <route>:category/line/:lines</route>
+    <defaults>
+        <controller>line-search</controller>
+        <action>index</action>
+    </defaults>
+</search-line>
+<search-station>
+    <route>:category/station/:stations</route>
+    <defaults>
+        <controller>station-search</controller>
+        <action>index</action>
+    </defaults>
+</search-station>
+<search-area>
+    <route>:category/area/:prefecture/:cities</route>
+    <defaults>
+        <controller>area-search</controller>
+        <action>index</action>
+        <prefecture></prefecture>
+        <cities></cities>
+    </defaults>
+</search-area>
+<shop>
+    <route>shop/:shop_id/:action</route>
+    <defaults>
+        <controller>shop</controller>
+        <action>index</action>
+    </defaults>
+</shop>
+<offer>
+    <route>offer/:offer_id</route>
+    <defaults>
+        <controller>offer</controller>
+        <action>index</action>
+    </defaults>
+</offer>
+<info>
+    <route>info/:static_name</route>
+    <defaults>
+        <controller>info</controller>
+        <action>index</action>
+    </defaults>
+</info>
+
+<pre-regist-ok>
+    <route>pre-regist-ok</route>
+    <defaults>
+        <controller>index</controller>
+        <action>pre-regist-ok</action>
+    </defaults>
+</pre-regist-ok>
+<pre-regist>
+    <route>pre-regist</route>
+    <defaults>
+        <controller>index</controller>
+        <action>pre-regist</action>
+    </defaults>
+</pre-regist>
+
+<user-edit>
+    <route>my-page/user-edit/:user_id</route>
+    <defaults>
+        <controller>my-page</controller>
+        <action>user-edit</action>
+    </defaults>
+</user-edit>
+
+<images type="Zend_Controller_Router_Route_Regex">
+    <route>(images/(\d+)/(\d+)/(.+)-(.+?))</route>
+    <defaults>
+        <controller>images</controller>
+        <action>index</action>
+    </defaults>
+    <map>
+        <full_path>1</full_path>
+        <round>2</round>
+        <shop_id>3</shop_id>
+        <type>4</type>
+        <file>5</file>
+    </map>
+</images>
+
+</routes>

@@ -1,0 +1,59 @@
+<style>
+    .input {
+        margin-left:100px;
+    }
+
+    input[type=text],
+    textarea {
+        width:90%;
+    }
+
+    textarea {
+        height:150px;
+    }
+
+    button,
+    input[type=button],
+    input[type=submit] {
+        margin:0 20px;
+    }
+
+    dt, dd {
+        clear: both;
+    }
+
+    #category-element label,
+    #types-element label {
+        float:left;
+        width:180px;
+    }
+
+    #category-element br,
+    #types-element br {
+        display: none;
+    }
+
+    #category-element ul,
+    #types-element ul {
+        clear:both;
+    }
+</style>
+<script type="text/javascript">
+$(function(){
+	$('#pref_id').change(function(){
+	    $('#city_code').load(
+            '/ajax/prefecture/cities/',
+            {id: $(this).val()});
+	});
+});
+</script>
+<div class="input">
+    <?php if ($this->messages): ?>
+        <ul class="errors">
+            <?php foreach ($this->messages as $msg): ?>
+                <li><?= $msg ?></li>
+            <?php endforeach ?>
+        </ul>
+    <?php endif ?>
+    <?= $this->form ?>
+</div>

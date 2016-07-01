@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/*#shoplist esthe 
+-----------------------------------*/
+
+.contents_shoplist{
+	margin-left: 5px;
+	margin-right: 10px;
+	width: 710px;
+}
+
+#shoplist_h2 {
+	width: 665px;
+	height: 50px;
+	padding: 43px 0 30px 35px;
+	background: url(../images/shoplist/title_bg.jpg) no-repeat;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	
+}
+
+#serch_box{
+		width:700px;
+	min-height: 390px;
+	margin-top: 30px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	background:#F6F6F6;
+	font-size: 10px;
+	color: #333;
+}
+
+.serch_box_inner{
+	width: 688px;
+	margin-left: 5px;
+	margin-bottom:5px;
+	border: 1px solid #ddd;
+	background: #fff;
+	overflow: hidden;
+}
+
+#jouken{
+	margin-left: 12px;
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: 15px;
+	font-size: 14px;
+	background: url(../images/shoplist/serch_arrow.gif) no-repeat center left;
+}
+
+#serch_box table{
+	width: 660px;
+	margin-left: 20px;
+	background: #fff;
+}
+
+#serch_box td{
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #999;
+	line-height: 2.3;
+}
+
+.serch_box_inner div{
+	font-size: 11px;
+	width: 50px;
+	float: left;
+	overflow: hidden;
+}
+
+
+#serch_box ul{
+	width: 600px;
+	float: left;
+	overflow: hidden;
+}
+
+#serch_box input{
+	margin-left: 5px;
+	margin-right: 3px;
+}
+
+.cat_serch li{
+	width: 130px;
+	float: left;
+}
+
+.kibo_serch li{
+	width: 130px;
+	float: left;
+}
+
+.kinmu_serch li{
+	width: 100px;
+	float: left;
+}
+
+.pager01{
+	width: 698px;
+	height: 28px;
+	margin-top: 15px;
+	background: #f3f3f3;
+	border: 1px solid #f3f3f3;
+}
+
+.pager01 p{
+	width: 300px;
+	height: 18px;
+	margin-top: 5px;
+	margin-left: 220px;
+	font-weight: bold;
+	float: left;
+}
+
+.pager02{
+	width: 698px;
+	height: 28px;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+.pager02 ul{
+	width: 380px;
+	margin: 0 auto;	
+}
+
+.pager02 li{
+	margin-right: 25px;
+	float: left;
+}
+
+
+.pager_button{
+	width: 110px;
+	height: 26px;
+	margin-top: 1px;
+	margin-right: 10px;
+	float:right;
+}
+
+
+.shop_box{
+	width: 710px;
+	margin-top: 30px;
+	overflow: hidden;
+}
+
+.shop_box .shop_header_box{
+	width: 708px;
+	border-top: 1px solid #C2ABF8;
+	border-left: 1px solid #C2ABF8;
+	border-right: 1px solid #C2ABF8;
+	border-bottom: 3px solid #4E04B5;
+}
+
+.shop_box .shop_header_title_box{
+	width: 680px;
+	margin-top: 10px;
+	margin-left: 15px;
+	overflow: hidden;
+	float: left;
+}
+
+.shop_box .shop_title{
+	width: 480px;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted #ddd;
+	font-size: 10px;
+	color: #000;
+	float: left;
+}
+
+.shop_box .main_title{
+	font-weight: bold;
+	font-size: 16px;
+	color: #000;
+}
+
+.shop_box .kininaru{
+	width: 165px;
+	height: 22px;
+	margin-top: 10px;
+	margin-left: 35px;
+	overflow:hidden;
+	float: left;
+}
+
+.shop_box .oiwai{
+	width: 215px;
+	height: 27px;
+	padding-top: 1px;
+	margin-top: 10px;
+	margin-left: 492px;
+	margin-bottom: 10px;
+	background: url(../images/shoplist/oiwai.gif) no-repeat;
+}
+
+.shop_box .oiwai p{
+	width: 60px;
+	height: 20px;
+	margin-left: 140px;
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color:#EF5A24;
+	font-family:"ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;
+}
+
+.shop_box .shop_contents_left{
+	width: 220px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	float: left;
+}
+
+.shop_box .shop_contents_left p{
+	margin-top: 20px;
+}
+
+.shop_box .shop_contents_right {
+	width: 480px;
+	margin-left: 10px;
+	overflow: hidden;
+	float: left;
+}
+
+.shop_box .shop_contents_right h3{
+	min-height: 60px;
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 19px;
+	color: #4E04B5;
+}
+
+.shop_box .shop_descr{
+	margin-top: 10px;
+	font-size: 11px;
+	color: #000;
+	}
+
+.shop_box .shop_contents_right table {
+	margin-top: 15px;
+}
+
+.shop_box .shop_contents_right td{
+	padding: 10px 10px;
+	border: 1px solid #B6B3B1;
+	font-size: 11px;
+}
+
+.shop_box .shop_contents_right .td_left {
+	width: 50px;
+	background: #F2F2F0;
+}
+
+.shop_box .shop_contact{
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-size: 11px;
+	line-height: 1.2;
+	overflow: hidden;
+}
+
+.shop_box .shop_contact p.left_box{
+	width: 180px;
+	margin-top: 5px;
+	color: #76296F;
+	font-weight: bold;
+	float: left;
+	overflow: hidden;
+}
+
+.shop_box .shop_contact p.right_box{
+	width: 140px;
+	margin-top: 1px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #C515CA;
+	float: left;
+	overflow: hidden;
+}
+
+
+.shop_box .shop_req_number{
+	width: 120px;
+	margin-top: 5px;
+	margin-left: 10px;
+	line-height: 1.2;
+	font-size: 11px;
+	float: left;
+	overflow: hidden;
+}
+
+.shop_box .shop_button_left{
+	width: 190px;
+	height: 45px;
+	margin-top: 10px;
+	margin-left: 7px;
+	float: left;
+}
+
+.shop_box .shop_button_right{
+	width: 250px;
+	margin-left: 22px;
+	float: left;
+}
+
+.shop_box .shop_footer_box {
+	border: 1px solid #ddd;
+}
+.shop_box .shop_footer_box p{
+	width: 690px;
+	margin: 3px;
+	padding:5px 5px;
+	font-size: 10px;
+	background: #f0f0f0;
+}

@@ -1,0 +1,221 @@
+<style>
+
+#second_cat_area {
+    background: url("/pc/images/toppage/second_cat_area.png") no-repeat scroll 0 0 transparent;
+    margin-bottom: 50px;
+    margin-left: 34px;
+    margin-top: 8px;
+    min-height: 505px;
+    overflow: hidden;
+    width: 940px;
+}
+
+.second_cat_s_box_fitness{
+    width: 130px;
+	height: 180px;
+}
+
+.second_cat_s_box_beauty{
+	height: 130px;
+}
+
+</style>
+<!--左上のボックス-->
+<div id="second_cat_area">
+    <div class="second_cat_box">
+        <div class="box12">
+            <?php
+            $index = 0;
+            foreach($this->data_center[0]['children'] as $k1=>$child):
+            $index++;
+            if ($index % 4 == 0) echo "</div><div class=\"box12\">";
+            ?>
+            <div class="second_cat_s_box pink second_cat_s_box_beauty">
+                <h4>
+                    <a href="/<?php echo $child['url'] ?>"><?= $child['contents']; ?>
+                    </a>
+                </h4>
+                <?php
+                $str = '';
+                foreach ($child['hoods'] as $k2=>$hood){
+                        $str .= $hood['contents'].'/';
+                    }
+                    $str = substr($str, 0, strlen($str)-1).'などの募集';
+                    ?>
+                <p>
+                    <?= $str; ?>
+                </p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <!--右上のボックス-->
+    <div class="second_cat_box">
+        <div class="box12 leftmg01">
+            <?php
+            $index = 0;
+            foreach($this->data_center[1]['children'] as $k1=>$child):
+            $index++;
+            if ($index % 4 == 0) echo "</div><div class=\"box12 leftmg01\">";
+            ?>
+            <div class="second_cat_s_box blue">
+                <h4>
+                    <a href="/<?php echo $child['url'] ?>"><?= $child['contents']; ?>
+                    </a>
+                </h4>
+                <?php
+                $str = '';
+                foreach ($child['hoods'] as $k2=>$hood){
+                        $str .= $hood['contents'].'/';
+                    }
+                    $str = substr($str, 0, strlen($str)-1).'などの募集';
+                    ?>
+                <p>
+                    <?= $str; ?>
+                </p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <!--左下のボックス-->
+    <div class="second_cat_box">
+        <div class="box12">
+            <?php
+            foreach($this->data_center[2]['children'] as $k1=>$child): ?>
+            <div class="second_cat_s_box green">
+                <h4>
+                    <a href="/<?php echo $child['url'] ?>"><?= $child['contents']; ?>
+                    </a>
+                </h4>
+                <?php
+                $str = '';
+                foreach ($child['hoods'] as $k2=>$hood){
+                        $str .= $hood['contents'].'/';
+                    }
+                    $str = substr($str, 0, strlen($str)-1).'などの募集';
+                    ?>
+                <p>
+                    <?= $str; ?>
+                </p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <!--右下のボックス-->
+    <div class="second_cat_box">
+        <div class="box12 leftmg01">
+            <?php
+            foreach($this->data_center[3]['children'] as $k1=>$child): ?>
+            <div class="second_cat_s_box brw second_cat_s_box_fitness">
+                <h4>
+                    <a href="/<?php echo $child['url'] ?>"><?= $child['contents']; ?>
+                    </a>
+                </h4>
+                <?php
+                $str = '';
+                foreach ($child['hoods'] as $k2=>$hood){
+                        $str .= $hood['contents'].'/';
+                    }
+                    $str = substr($str, 0, strlen($str)-1).'などの募集';
+                    ?>
+                <p>
+                    <?= $str; ?>
+                </p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <!--/#second_cat_area-->
+</div>
+
+<div class="clear"></div>
+<div id="main" class="toppage_contents">
+    <div id="navi_box">
+        <table style="width: 680px">
+            <tr>
+                <th style="width: 80px;"><img src="/pc/images/toppage/t_icon01.gif"
+                    alt="" />
+                </th>
+                <td>
+                    <ul class="navi_box_headline">
+                        <li><a href="umeda/">梅田駅</a>
+                        </li>
+                        <li><a href="shinsaibashi/">心斎橋駅</a>
+                        </li>
+                        <li><a href="nanba/">難波駅</a>
+                        </li>
+                        <li><a href="omiya/">大宮駅</a>
+                        </li>
+                        <li><a href="sapporo/">札幌市</a>
+                        </li>
+                        <li><a href="sendai/">仙台市</a>
+                        </li>
+                        <li><a href="sakai/">堺駅</a>
+                        </li>
+                        <li><a href="harajuku/">原宿駅</a>
+                        </li>
+                        <li><a href="omotesando/">表参道駅</a>
+                        </li>
+                        <li><a href="kawasaki/">川崎市</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <table class="navi_box_cat_box" style="float: left; width: 320px;">
+            <?php for ($i=0; $i<3; $i++): ?>
+            <tr>
+                <th style="width: 80px;"><?php echo $this->regions[$i]['name']?></th>
+                <td>
+                    <ul>
+                        <?php foreach ($this->regions[$i]['prefs'] as $pref) :?>
+                        <li><a href="/all/area/<?php echo $pref['name'] ?>"
+                            title="<?php echo $pref['name']?>(<?php echo $this->arr_cities[$pref['name']]?>)"><?php echo str_replace(array('県','府'),'', $pref['name'])?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </td>
+            </tr>
+            <?php endfor; ?>
+        </table>
+        <table class="navi_box_cat_box" style="float: left; width: 320px;">
+            <?php for ($i=3; $i<6; $i++): ?>
+            <tr>
+                <th style="width: 60px;"><?php echo $this->regions[$i]['name']?></th>
+                <td>
+                    <ul>
+                        <?php foreach ($this->regions[$i]['prefs'] as $pref) :?>
+                        <li><a href="/all/area/<?php echo $pref['name'] ?>"
+                            title="<?php echo $pref['name']?>(<?php echo $this->arr_cities[$pref['name']]?>)"><?php echo str_replace(array('県','府'),'', $pref['name'])?>
+                        </a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </td>
+            </tr>
+            <?php endfor; ?>
+        </table>
+    </div>
+    <div class="clear"></div>
+    <div id="news_area">
+        <h2>新着情報</h2>
+        <ul>
+            <li><span>2013-08-17</span> 【求人サイトチューズ】サイトのグランドオープンを行いました。</li>
+            <li><span>2013-08-03</span> 【求人サイトチューズ】プレリリースを行いました。</li>
+        </ul>
+    </div>
+    <div id="keisai_area">
+        <h2>求人掲載について</h2>
+        <p>
+            美容・セラピストやマッサージ、整体、リフレクソロジー、エステティックサロン等を始め、各種リラクゼーション店の募集情報を掲載させて頂きます。<br />
+            チューズはセラピスト・リラクゼーション業界に特化したサイトなので、余分な費用をかけず募集情報を掲載できます！貴店からのご応募を心よりお待ちしております。<br />
+            また店舗様向けの情報管理メニューで効率よく良い求職者を探すことが出来ます！！ &gt;&gt;詳しく見る<br />
+            「チューズ関連キーワード」<br />
+            エステシャン/ヘアサロンフロント/まつ毛パーマ/メイク用品販売/化粧品業界/フットセラピスト/カラーセラピスト/ボディセラピス
+            ト/アロマセラピスト/アロマテラピスト/アロママッサージ/リンパマッサージ/オイルマッサージ/足つぼマッサージ/足湯療法/足つぼ療法
+            /整体療術/整体士/骨格神経療法/足流整体など
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+<!-- /#main -->
+<?php echo $this->render('right_menu.phtml') ?>

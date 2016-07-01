@@ -1,0 +1,295 @@
+<script type="text/javascript">
+function doSubmit(str_type){
+	if (str_type == 'save'){
+		$('#frmForm').attr('action', 'regist-save');
+	}else if (str_type == 'back'){
+		if ($('#user_id').val()==''){
+		    $('#frmForm').attr('action', 'register');
+		}else{
+			if ($('#offer_id').val()!=''){// 求人応募
+			    $('#frmForm').attr('action', '/apply/form');
+			}else{
+				//$('#frmForm').attr('action', '/my-page/user-edit/'+$('#user_id').val());
+				$('#frmForm').attr('action', '/my-page/user-edit');
+			}
+		}
+	}
+}
+</script>
+<div class="cat">
+	<form id="frmForm" method="POST">
+	    <input type="hidden" name="user_id" id="user_id" value="<?= $this->input['user_id'] ?>">
+	    <input type="hidden" name="offer_id" id="offer_id" value="<?= $this->input['offer_id'] ?>">
+    	<input type="hidden" name="first_name" value="<?= $this->input['first_name'] ?>" />
+        <input type="hidden" name="last_name" value="<?= $this->input['last_name'] ?>" />
+        <input type="hidden" name="first_name_kana" value="<?= $this->input['first_name_kana'] ?>" />
+        <input type="hidden" name="last_name_kana" value="<?= $this->input['last_name_kana'] ?>" />
+        <input type="hidden" name="gender" value="<?= $this->input['gender'] ?>" />
+        <input type="hidden" name="birth_day_yy" value="<?= $this->input['birth_day_yy'] ?>" />
+        <input type="hidden" name="birth_day_mm" value="<?= $this->input['birth_day_mm'] ?>" />
+        <input type="hidden" name="birth_day_dd" value="<?= $this->input['birth_day_dd'] ?>" />
+        <input type="hidden" name="zip_code1" value="<?= $this->input['zip_code1'] ?>" />
+        <input type="hidden" name="zip_code2" value="<?= $this->input['zip_code2'] ?>" />
+        <input type="hidden" name="pref_id" value="<?= $this->input['pref_id'] ?>" />
+        <input type="hidden" name="city" value="<?= $this->input['city'] ?>" />
+        <input type="hidden" name="address" value="<?= $this->input['address'] ?>" />
+        <input type="hidden" name="lines" value="<?= $this->input['lines'] ?>" />
+        <input type="hidden" name="stations" value="<?= $this->input['stations'] ?>" />
+        <input type="hidden" name="tel" value="<?= $this->input['tel'] ?>" />
+        <input type="hidden" name="email_address" value="<?= $this->input['email_address'] ?>" />
+        <input type="hidden" name="password" value="<?= $this->input['password'] ?>" />
+        <input type="hidden" name="password2" value="<?= $this->input['password2'] ?>" />
+        <input type="hidden" name="work_type" value='<?= serialize($this->input['work_type']) ?>' />
+        <input type="hidden" name="career" value='<?= serialize($this->input['career']) ?>' />
+        <input type="hidden" name="start_work" value='<?= serialize($this->input['start_work']) ?>' />
+        <input type="hidden" name="had_manager" value="<?= $this->input['had_manager'] ?>" />
+        <input type="hidden" name="experience" value="<?= $this->input['experience'] ?>" />
+        
+        <input type="hidden" name="self_pr" value="<?= $this->input['self_pr'] ?>" />
+        <input type="hidden" name="skill" value='<?= serialize($this->input['skill']) ?>' />
+        <input type="hidden" name="skill_etc" value="<?= $this->input['skill_etc'] ?>" />
+        <input type="hidden" name="tel_time" value='<?= serialize($this->input['tel_time']) ?>' />
+		<div id="container" class="inner info_container">
+			<div id="form_join_user" class="mypage_contents">
+			    <?php
+                if (isset($this->input['offer_id']) && ($this->input['offer_id']!='')){ ?>
+                <div class="image_box">
+    				<img src="/pc/images/mypage/step02.gif" alt="" />
+    			</div>
+                <?php }?>
+				<div style="text-align: center;">
+				         以下の情報で<?= ($this->input['user_id']=='')? '新規登録':'編集' ?>してもよろしいですか？
+				</div>
+
+				<table>
+					<tr>
+						<td width="142">氏名</td>
+						<td colspan="3"><?= $this->input['first_name']. $this->input['last_name'] ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">ふりがな</td>
+						<td colspan="3"><?= $this->input['first_name_kana'].$this->input['last_name_kana'] ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">性別</td>
+						<td colspan="3"><?= $this->input['gender_name'] ?>
+						</td>
+					</tr>
+
+					<tr>
+						<td width="142">生年月日</td>
+						<td colspan="3"><?= $this->input['birth_day_yy'].'年'.$this->input['birth_day_mm'].'月'.$this->input['birth_day_dd'].'日' ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">郵便番号</td>
+						<td colspan="3"><?= $this->input['zip_code1'].'-'.$this->input['zip_code2'] ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">都道府県/市区町村</td>
+						<td colspan="3"><?= $this->input['pref_name'].$this->input['city_name'] ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">市区町村以下</td>
+						<td colspan="3"><?= $this->input['address'] ?></td>
+					</tr>
+					<tr>
+						<td width="142">自宅最寄り駅</td>
+						<td colspan="3"><?= $this->input['line_name'] ?>/<?= $this->input['station_name'] ?></td>
+					</tr>
+					<tr>
+						<td width="142">TEL</td>
+						<td colspan="3"><?= $this->input['tel'] ?></td>
+					</tr>
+					<tr>
+						<td width="142">MAIL</td>
+						<td colspan="3"><?= $this->input['email_address'] ?></td>
+					</tr>
+					<tr>
+						<td width="142">パスワード</td>
+						<td colspan="3"><?php for($i=1; $i<=strlen($this->input['password']); $i++){ 
+						    echo '*';
+						}; ?>&nbsp;&nbsp;(セキュリティの関係上表示していません)</td>
+					</tr>
+					<tr>
+						<td width="142">希望勤務形態</td>
+						<td colspan="3"><?php foreach ($this->input['tag_work_type'] as $k=>$v):?>
+							<?php echo $v['contents'].'<br>'; ?> <?php endforeach;?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">希望職種</td>
+						<td colspan="3"><?php foreach ($this->input['tag_career'] as $k=>$v):?>
+							<?php echo $v['contents'].'<br>'; ?> <?php endforeach;?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">勤務開始可能日</td>
+						<td colspan="3"><?php foreach ($this->input['tag_start_work'] as $k=>$v):?>
+							<?php echo $v['contents'].'<br>'; ?> <?php endforeach;?>
+						</td>
+					</tr>
+				</table>
+				<br> <br>
+
+
+				<table id="register">
+					<tr>
+						<td width="142">店長経験</td>
+						<td colspan="3"><?= $this->input['had_manager_name']?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">実務経験</td>
+						<td colspan="3"><?= $this->input['experience_name']?></td>
+					</tr>
+					<tr>
+						<td width="142">自己PR、職歴など</td>
+						<td colspan="3"><?= nl2br(e($this->input['self_pr'])) ?>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">保持資格</td>
+						<td colspan="3"><?php foreach ($this->input['tag_skill'] as $k=>$v):?>
+							<?php echo $v['contents'].'<br>'; ?> <?php endforeach;?> <?php if (!empty($this->input['skill_etc'])) echo '<br>'.$this->input['skill_etc']; ?>
+						</td>
+					</tr>
+					<tr>
+						<td>就・転職サービス</td>
+						<td><?php foreach ($this->input['tag_tel_time'] as $k=>$v):?> <?php echo $v['contents'].'<br>'; ?>
+							<?php endforeach;?>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- /#join_user -->
+		<!--利用規約/始-->
+		<?php if ($this->input['user_id']=='') { ?>
+		<div class="kiyakuscroll" style="padding: 10px;">
+			<h2>利用規約</h2>
+本規約は、グルーヴ・ギア株式会社（以下、当社といいます。）が企画運営する「Choose」を通じて提供される一切のサービス（以下、本サービスといいます。）に適用されるものとします。<br /><br />
+
+
+第1条（定義）<br /><br />
+
+ 1.本サービスとは、グルーヴ・ギア株式会社が運営する「Choose」を通じた、インターネット上の求人情報サービス及び、それに関連するサービスの総称です。<br />
+ 2.ユーザーとは、本サービスを利用するすべての方をいいます。<br />
+
+第2条（禁止事項）<br /><br />
+
+ユーザーは、以下の行為を行うことを禁止します。<br />
+<br />
+ 1.虚偽の情報を登録する行為<br/>
+ 2.公序良俗・法令・条例等に反する行為<br/>
+ 3.社会常識・通念を逸脱した行為<br/>
+ 4.当社、他のユーザー及び第三者の財産権（特許権、商標権、著作権等のあらゆる知的財産権を含む）またはプライバシーに関する権利等、あらゆる法的権利を侵害する行為<br/>
+ 5.当社、他のユーザー、求人企業及び第三者を誹謗中傷する行為<br/>
+ 6.継続勤務の意思がないにも関わらず採用祝い金を申請する行為<br/>
+ 7.本サービスの運営、当社の経営を妨げる恐れのある一切の行為<br/>
+ 8.その他、当社が不適切と判断する一切の行為<br/>
+<br/>
+第3条（情報の削除）<br/>
+<br/>
+ 当社は、第2条に規定された行為とみなされる情報が登録される等、登録情報を削除する必要がある場合、ユーザーに通知することなく、当該情報を削除することができます。<br/>
+<br/>
+第4条（開示対象個人情報の取扱と周知）<br/>
+<br/>
+当社が取得した開示対象個人情報について、利用目的の通知、開示、内容の訂正、追加または削除、利用の停止、消去及び第三者への提供の停止（以下、「開示等」という。）を希望される場合は、下記をご覧下さい。<br/>
+<br/>
+1.個人情報を取り扱う事業者<br/>
+  グルーヴ・ギア株式会社<br/>
+2.個人情報保護管理者<br/>
+  グルーヴ・ギア株式会社 代表取締役 石塚保行<br/>
+  電話番号：03-6380-9557<br/>
+3.開示対象個人情報の利用目的<br/>
+ （1）ユーザーのお問い合わせに対する回答、相談<br/>
+ （2）ユーザーへのご連絡、お知らせ<br/>
+ （3）グルーヴ・ギア株式会社の運営する事業におけるユーザーへの個人認証<br/>
+ （4）ユーザーの登録された企業への提供（当社サイト・企業管理画面）<br/>
+   ①氏名<br/>
+   ②性別<br/>
+   ③生年月日<br/>
+   ④電話番号<br/>
+   ⑤現在の職業<br/>
+   ⑥メールアドレス<br/>
+ （5）採用祝い金のお支払、金融機関に対する提供<br/>
+   ①振込口座情報<br/>
+ （6）ユーザーの登録確認<br/>
+ （7）アンケート、キャンペーン、その他情報提供の為の連絡<br/>
+ （8）グルーヴ・ギア株式会社の運営する事業の為、保護措置を講じた上で、個人情報の本人より直接取得した個人情報を、委託する場合がある<br/>
+4.個人情報の提供について<br/>
+個人情報の本人は、当社に対し任意で個人情報を与えることができます。<br/>
+個人情報の本人が、個人情報を与えることに不同意の場合、グルーヴ・ギア株式会社の運営するサイトをご利用いただけません。<br/>
+5.開示等の請求方法<br/>
+ 開示対象個人情報の開示等の請求方法は、以下の通りとなります。<br/>
+ （1）開示等の申出先<br/>
+    グルーヴ・ギア株式会社 代表取締役 石塚保行<br/>
+    住  所：東京都千代田区九段北1-4-1日本地所ブルックスビル9階<br/>
+    電話番号：03-6380-9557<br/>
+ （2）開示等の請求の受付<br/>
+    開示等の請求に関しては、電話又は直接来訪下さい。<br/>
+ （3）本人確認方法<br/>
+    お電話にて請求いただく場合、氏名・電話番号・メールアドレスにて本人確認をさせていただきます。また、直接来訪いただく場合、免許証・パスポート等の身分証明にて本人確認をさせていただきます。<br/>
+ （4）手数料<br/>
+    無料。ただし、手数料について変更を行う場合は、あらかじめ公表いたします。<br/>
+ （5）代理人による開示等の請求方法<br/>
+    開示等の請求をする者が、本人、未成年者及び成年被後見人の法定代理人である場合は、下記の書類を提示して下さい。<br/>
+     ・法定代理権があることを確認するための書類（戸籍謄本、親権者の場合は扶養家族が記入された保険証のコピーも可）<br/>
+     ・法定代理人ご本人であることを確認するための書類（法定代理人の運転免許証、又は健康保険証のコピー）1通<br/>
+    開示等の請求をする者が、委任による代理人の場合<br/>
+     ・委任状1通<br/>
+     ・代理人ご本人であることを確認するための書類（代理人の運転免許証、又は健康保険証のコピー）1通<br/>
+6.開示対象個人情報の取り扱いに関する苦情・相談の申出先<br/>
+ 開示対象個人情報の取り扱いに関する苦情・相談は、下記までご連絡下さい。<br/>
+  ＜個人情報に関する連絡先＞<br/>
+   グルーヴ・ギア株式会社 代表取締役 石塚保行<br/>
+   TEL：03-6380-9557<br/>
+<br/>
+第5条（サービスの変更）<br/>
+<br/>
+ 当社は、事前の通知なく、ユーザー向けサービスを変更または一時的に中断をすることがありますが、ユーザーはそれに対して異議を申し立てないものとします。<br/>
+<br/>
+第6条（採用祝い金の申請期限）<br/>
+<br/>
+ 採用祝い金の申請期限は、ユーザーが応募した日から3ヶ月間とします。期間内に当社へ申請を行わなかった場合は、採用祝い金の受取を希望しないものと見なし、それ以降の申請は無効とします。<br/>
+<br/>
+第7条（免責）<br/>
+<br/>
+ 1.本サービスは、職業安定法に規定される職業紹介ではなく、当社は本サービス上の求人情報内容の正確性、有用性等について何らの保証をしないものとします。<br/>
+ 2.当社は、ユーザーが本サービスを利用することにより発生する一切の損害に対し、何らの責任も負担しないものとします。<br/>
+ 3.当社は本サービスの中断や停止、内容の変更や追加によってユーザーが受けた損害に関して、何ら責任も負わないものとします。<br/>
+<br/>
+第8条（規約の変更）<br/>
+<br/>
+ 当社は、ユーザーの承諾を得ることなく、本規約を随時変更することができます。変更の内容は、本サービスに掲載し、その掲載をもって、すべてのユーザーが了承したものとみなします。<br/>
+<br/>
+第9条（損害賠償）<br/>
+<br/>
+ ユーザーが本規約に違反し、当社または第三者に対し損害を与えた場合、ユーザーは、当社または第三者に対し、損害賠償義務を負担します。<br/>
+<br/>
+第10条（管轄裁判所）<br/>
+<br/>
+本規約に関する紛争については、東京地方裁判所を第一審の管轄裁判所とします。<br/>
+<br/>
+制定日：2013年8月03日<br/>
+<br/>
+グルーヴ・ギア株式会社<br/>
+代表取締役 石塚保行<br/>
+		</div>
+		<?php } ?>
+		<!--利用規約/終-->
+        </div>
+        <p style="text-align: center; padding: 20px;">
+        	<input type="image" src="/pc/images/mypage/button_kakunin_doui.gif" value="保存" onclick="doSubmit('save')">
+        </p>
+        <p style="text-align: center; padding: 20px;">
+        	<input type="image" src="/pc/images/mypage/button_kakunin_modoru.gif" value="確認" onclick="doSubmit('back')">
+        		
+        </p>
+        </form>
+</div>

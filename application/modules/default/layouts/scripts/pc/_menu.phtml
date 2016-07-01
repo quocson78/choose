@@ -1,0 +1,13 @@
+<div id="g_navi" class="inner">
+<ul>
+<?php 
+foreach ($this->data_menu as $data): 
+?>
+    <li id="<?= $this->arr_item_menu[$data['contents']] ?>">
+        <a href="/<?= $data['url'] ?>">
+            <?= $data['contents'] ?>
+        </a>
+    </li>
+<?php endforeach ?>
+</ul>
+</div>

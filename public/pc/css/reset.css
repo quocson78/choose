@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*----------
+CSS reset.css
+----------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  font-family:Meiryo,"Hiragino Kaku Gothic Pro",Arial,Verdana,sans-serif;
+}
+
+b,strong {
+  font-weight: bold;
+}
+
+img {
+  font-size: 0;
+  vertical-align: middle;
+	border: 0;
+}
+
+ol,ul,li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: 100%;
+	font-weight: normal;
+}
+
+hr {
+  border: 0 #ccc solid;
+  clear: both;
+}
+

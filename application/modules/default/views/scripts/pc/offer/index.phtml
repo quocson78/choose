@@ -1,0 +1,245 @@
+<div class="cat">
+<div id="contents_header_line">免責事項：
+	本サイトChooseホームページに掲載する情報、各種サイトを利用することで発生したトラブルや損失、損害に対して、Groove
+	Gearは一切責任を負いません。お客様が当ホームページに含まれる情報もしくはサービスを利用すること、及び利用することができなかったことにより生じる直接的または間接的な損失に対し、当社及び関連会社は一切責任を負うものではありません。</div>
+<!--左上のボックス-->
+<div id="main" class="contents_shopinfo">
+	<?php echo $this->render('shop/shop_info_box.phtml') ?>
+	<!--/.shop_info_h_box-->
+	<div class="clear"></div>
+	<div class="shop_info_center_area">
+		<div class="shop_shokai_top_box">
+			<div class="left_box2">
+				<p>
+					<?= $this->shopImage()->tagByFile('offer_main', $this->shop['shop_id'], $this->shop_title_img[0]['image_filename']) ?>
+				</p>
+			</div>
+			<div class="right_box2">
+				<h3>
+					<img src="/pc/images/empro/point_icon04.png" alt="" /><span>注目ポイント</span>
+				</h3>
+				<div class="clear"></div>
+				<div class="right_s_box">
+				    <?php 
+				    
+				    $left_ul = "<ul class=\"item01\">";
+				    $right_ul = "<ul class=\"item01\">";
+				    foreach ($this->offer_points as $k1=>$v1) :
+				    if ($k1%2==0) {
+                        $left_ul .= "<li><img src=\"/pc/images/shopinfo/point_icon.gif\" alt=\"\" />".$v1['contents']."</li>"; 
+                    }else{
+                        $right_ul .= "<li><img src=\"/pc/images/shopinfo/point_icon.gif\" alt=\"\" />".$v1['contents']."</li>";
+                    }
+				    endforeach; 
+				    $left_ul .= "</ul>";
+				    $right_ul .= "</ul>";
+				    echo $left_ul;
+				    echo $right_ul;
+				    ?>
+				</div>
+				<h3>
+					<img src="/pc/images/empro/point_icon04.png" alt="" /><span>募集職種</span>
+				</h3>
+				<?= nl2br(e($this->offer['sokusyu'])) ?><br>
+				<h3>
+					<img src="/pc/images/empro/point_icon04.png" alt="" /><span>応募資格</span>
+				</h3>
+				<ul class="item02">
+					<li><?= nl2br(e($this->offer['app_qualification'])) ?></li>
+					<li></li>
+				</ul>
+				<h3>
+					<img src="/pc/images/empro/point_icon04.png" alt="" /><span>地域・駅</span>
+				</h3>
+				<ul class="item02">
+				    <?php foreach ($this->offer['stations'] as $k=>$v): ?>
+					<li><?php if ($this->offer['pref_city']!='') {
+				        echo $this->offer['pref_city'].'・'.$v['station_name'].'駅';
+    				}else{
+    				    echo $this->shop['pref_city'].'・'.$v['station_name'].'駅';
+                    }
+    				?></li>
+    				<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="oubo_button">
+			<p>
+				<a href="/apply/index?offer_id=<?= $this->offer['offer_id'] ?>"><img src="/pc/images/shopinfo/button_oubo.gif" alt="" />
+				</a>
+			</p>
+		</div>
+		<div class="cips">
+			<div class="cips_title"></div>
+
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="shop_shosai_area" class="second_center_area">
+		<h2>詳細情報</h2>
+		<table>
+			<tr>
+				<td class="left">募集職種</td>
+				<td class="right"><?= nl2br(e($this->offer['sokusyu'])) ?></td>
+				<td class="left">店名</td>
+				<td class="right"><?= nl2br(e($this->shop['shopname_kana'])) ?><br>
+				<?= nl2br(e($this->shop['shopname'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">勤務形態</td>
+				<td><?= nl2br(e($this->offer['koyokeitai'])) ?></td>
+				<td class="left" rowspan="2">勤務地</td>
+				<td><?php if ($this->offer['pref_city']!='') {
+				    echo nl2br(e($this->offer['pref_city'].$this->offer['address']));
+				}else{
+				    echo nl2br(e($this->shop['pref_city'].$this->shop['address']));
+                }
+				?></td>
+			</tr>
+			<tr>
+				<td class="left" rowspan="2">仕事内容</td>
+				<td rowspan="2"><?= nl2br(e($this->offer['work_contents'])) ?></td>
+				<?php if ($this->offer['crawl_flag']==1) { ?>
+				<td>
+				    TEL:<?= nl2br(e($this->offer['tel'])) ?>
+				    </td>
+				<?php } ?>
+				
+			</tr>
+			<tr>
+				<td class="left">利用路線</td>
+				<td><?= nl2br(e($this->offer['lines'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">給料</td>
+				<td><?= nl2br(e($this->offer['income'])) ?></td>
+				<td class="left" rowspan="2">最寄り駅</td>
+				<td rowspan="2">
+				    <?php foreach ($this->offer['stations'] as $k=>$v): ?>
+					<?php if ($this->offer['pref_city']!='') {
+				        echo $v['station_name'].'駅<br>';
+    				}else{
+    				    echo $v['station_name'].'駅<br>';
+                    }
+    				?>
+    				<?php endforeach; ?></td>
+			</tr>
+            <tr>
+				<td class="left">勤務時間</td>
+				<td ><?= nl2br(e($this->offer['work_time'])) ?></td>
+			</tr>
+
+			<tr>
+				<td class="left">待遇</td>
+				<td><?= nl2br(e($this->offer['treatment'])) ?></td>
+				<td class="left">勤務期間</td>
+				<td><?= nl2br(e($this->offer['work_term'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">休日</td>
+				<td><?= nl2br(e($this->offer['holidays'])) ?></td>
+				<td class="left" rowspan="4">その他</td>
+				<td rowspan="4"><?= nl2br(e($this->offer['note'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">募集年齢</td>
+				<td><?= nl2br(e($this->offer['offer_age'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">募集性別</td>
+				<td><?= nl2br(e($this->offer['sex'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left">応募資格</td>
+				<td><?= nl2br(e($this->offer['app_qualification'])) ?></td>
+			</tr>
+			<tr>
+				<td class="left" rowspan="2">歓迎項目</td>
+				<td rowspan="2"><?= nl2br(e($this->offer['reception'])) ?></td>
+				<td class="left">お祝い金</td>
+				<td><?php 
+    			if ($this->offer['gift_amount']!='') {
+                    echo number_format($this->offer['gift_amount']).' 円';
+                }
+    			?></td>
+			</tr>
+			<tr>
+				<td class="left">求人番号</td>
+				<td><?= nl2br(e($this->offer['offer_bango'])) ?></td>
+			</tr>
+		</table>
+	</div>
+	<div class="clear"></div>
+	<div class="oubo_button">
+		<p>
+			<a href="#"><img src="/pc/images/shopinfo/button_oubo.gif" alt="" />
+			</a>
+		</p>
+	</div>
+	
+	<?php echo $this->render('shop/shop_more_info.phtml'); ?>
+	<!--/#sonota_area-->
+	<div id="oubohouhou_area">
+		<h2>
+			応募の流れ
+		</h2>
+		<div class="oubohouhou_wrap">
+			<div class="oubohouhou_box">
+                <table>
+					<tr>
+						<td class="left_box">応募と今後の流れ</td>
+						<td>●チューズの応募フォームよりご応募<br /> ↓<br /> ●面接可否を、電話もしくはメールにてお知らせします。<br />
+							※ドメイン指定受信の解除を予めして下さい。<br /> ↓<br /> ●担当者と面接<br /> ↓<br />
+							●採用決定<br /> ↓<br /> ◎入社<br /> <br />
+							※採用方法が変更となる場合もございますので、ご了承下さい。
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+	<!--/#sonota_area-->
+	<div id="oiwaikinni_area">
+		<h2>お祝い金について</h2>
+		<div class="oiwaikinni_wrap">
+			<div class="oiwaikinni_box">
+                <table>
+                    <tr>
+                        <td class="left_box">求人番号</td>
+                        <td><?= nl2br(e($this->offer['offer_bango'])) ?></td>
+                    </tr>
+                    <tr>
+                        <td class="left_box">採用職種とお祝い金額</td>
+                        <td>□ お祝い金額     10000円<br /> 
+                            美容師/柔道整復師/鍼灸師/あん摩マッサージ指圧師<br /> <br />
+                            
+                            □ お祝い金額    5000円 <br /> 
+                            エステティシャン/カウンセラー/美容部員<br>
+                                                                          ネイリスト/アイリスト/レセプション（受付）<br>
+                                                                          セラピスト/アロマテラピスト/リフレクソロジスト・フットセラピスト<br>
+                                                                         整体師/カイロプラクター<br>
+                        </td>
+                    </tr>
+                </table>
+
+				<div class="oubo_button">
+					<p>
+						<a href="#"><img src="/pc/images/shopinfo/button_oubo.gif"
+							alt="" /> </a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--/#sonota_area-->
+	
+
+	<div class="clear mb30"></div>
+</div>
+<!-- /#main -->
+<?php echo $this->render('right_menu_shop.phtml') ?>
+<!--/#sub_shop -->
+</div>

@@ -1,0 +1,16 @@
+<div class="bground_bar">一発検索</div>
+<div style="padding: 7px;">
+住所
+<table><tr><td><select name="pref">
+<?php foreach ($this->data_pref as $pref): ?>
+<option value="<?= $pref['pref_id'] ?>"><?= $pref['name'] ?></option>
+<?php endforeach ?>
+</select></td></tr></table>
+
+<hr style="border: #aaaaaa 1px solid;">
+
+業種
+<?php foreach ($this->data_tag as $tag): ?>
+<input type="checkbox" name="tag[]" value="<?= $tag['tag_id']?>"> <?= $tag['contents'] ?><br>
+<?php endforeach ?>
+</div>

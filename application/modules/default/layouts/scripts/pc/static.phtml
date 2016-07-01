@@ -1,0 +1,36 @@
+<?php
+    $this->headLink()->appendStylesheet('/pc/css/reset.css');
+    $this->headLink()->appendStylesheet('/pc/css/layout.css');
+    $this->headLink()->appendStylesheet('/pc/css/style.css');
+    $this->headLink()->appendStylesheet('/pc/css/navi.css');
+
+    $this->headLink()->appendStylesheet('/pc/css/info.css');
+
+    $this->headScript()->appendFile('/js/jquery-2.0.3.min.js');
+    $this->headScript()->appendFile('/js/jquery.rollover.js');
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?= $this->headTitle() ?>
+    <?= $this->headLink() ?>
+    <?= $this->headScript() ?>
+</head>
+<body>
+<div id="wrap">
+    <?= $this->render('_header.phtml') ?>
+    
+    <?= $this->render('_menu.phtml') ?>
+    
+    <div id="container" class="inner info_container">
+        <?= $this->layout()->content ?>
+    </div>
+    
+    <?= $this->render('_footer.phtml') ?>
+    
+</div>
+<?= $this->render('_analytics.phtml') ?>
+
+</body>
+</html>

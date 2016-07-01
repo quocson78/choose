@@ -1,0 +1,17 @@
+<?php if (is_array($this->other_offers) && count($this->other_offers)>0) { ?>
+<div id="sonota_area">
+	<h2>このお店が募集している他の求人情報</h2>
+	<div class="sonota_wrap bt01">
+		<?php foreach ($this->other_offers as $k=>$offer): ?>
+		<div class="sonota_box">
+			<p>
+			<h3>
+				<a href="/offer/<?= $offer['offer_id'] ?>"><?= $offer['shopname_kana'] ?><?= $offer['shopname'] ?></a>
+			</h3>
+			　<?= $offer['tag_name'] ?>
+			</p>
+		</div>
+		<?php endforeach; ?>
+	</div>
+</div>
+<?php } ?>

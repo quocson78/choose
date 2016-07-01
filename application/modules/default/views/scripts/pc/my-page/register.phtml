@@ -1,0 +1,356 @@
+<script type="text/javascript">
+$(function(){
+	$('#pref_id').change(function(){
+		var pref_id = $(this).val();
+	    $.getJSON('/my-page/get-cities-prefid', {pref_id: pref_id}, function(data){
+		    var str_html = "<option value=''>選択してください</option>";
+	        for (var i=0; i<data.length; i++){
+	        	str_html += "<option value='"+data[i]['city_code']+"'>"+data[i]['city_name']+"</option>";
+	        }
+	        $('#city').html(str_html);
+		});
+
+	    $.getJSON('/my-page/get-lines', {pref_id: pref_id}, function(data){
+		    var str_html = "<option value=''>選択してください</option>";
+	        for (var i=0; i<data.length; i++){
+	        	str_html += "<option value='"+data[i]['line_id']+"'>"+data[i]['name']+"</option>";
+	        }
+
+	        $('#lines').html(str_html);
+		});
+		
+	});
+	$('#lines').change(function(){
+		var line_id = $(this).val();
+	    $.getJSON('/my-page/get-stations', {line_id: line_id}, function(data){
+		    var str_html = "<option value=''>選択してください</option>";
+	        for (var i=0; i<data.length; i++){
+	        	str_html += "<option value='"+data[i]['station_id']+"'>"+data[i]['station_name']+"</option>";
+	        }
+	        $('#stations').html(str_html);
+		});
+	});
+		
+});
+
+function set_pref_city(){
+	var zip_code = $('#zip_code1').val()+'-'+$('#zip_code2').val();
+	$.getJSON('/my-page/get-cities-zipcode', {zip_code: zip_code}, function(data){
+	    var str_html = "<option value=''>選択してください</option>";
+	    if (data.length>2){
+            for (var i=0; i<data.length; i++){
+            	str_html += "<option value='"+data[i]['city_code']+"'>"+data[i]['city_name']+"</option>";
+            }
+	    }
+        $('#city').html(str_html);
+        $('#city').val(data[0]['citycode']);
+        $('#pref_id').val(data[0]['pref_id']);
+
+        $.getJSON('/my-page/get-lines', {pref_id: data[0]['pref_id']}, function(data){
+		    var str_html = "<option value=''>選択してください</option>";
+	        for (var i=0; i<data.length; i++){
+	        	str_html += "<option value='"+data[i]['line_id']+"'>"+data[i]['name']+"</option>";
+	        }
+
+	        $('#lines').html(str_html);
+	        str_html = "<option value=''>選択してください</option>";
+	        $('#stations').html(str_html);
+	        
+		});
+	});
+}
+
+function doSubmit(str_type){
+	if (str_type == 'kakunin'){
+		$('#frmForm').attr('action', '/my-page/confirm');
+	}
+}
+</script>
+<div class="cat">
+	<div id="container" class="inner info_container">
+		<div id="form_join_user" class="mypage_contents">
+		    <?php
+            if (isset($this->input['offer_id']) && ($this->input['offer_id']!='')){ ?>
+            <div class="image_box">
+				<img src="/pc/images/mypage/step01.gif" alt="" />
+			</div>
+            <?php }
+            
+            if ($this->input['user_id']=='') { ?>
+			<div class="image_box">
+				<img src="/pc/images/mypage/upper_image.gif" alt="" />
+			</div>
+			<div class="image_box">
+				<img src="/pc/images/mypage/upper_image01.gif" alt="" />
+			</div>
+			<?php } ?>
+			<h3><?= ($this->input['user_id']=='') ? '会員登録':'登録情報の編集'?></h3>
+			<form id="frmForm" method="POST">
+			<input type="hidden" name="user_id" value="<?= $this->input['user_id'] ?>">
+			<input type="hidden" name="offer_id" value="<?= $this->input['offer_id'] ?>">
+				<table>
+					<tr>
+						<td width="142">氏名&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3">姓<input type="text" name="first_name" size="15"
+							value="<?= $this->input['first_name'] ?>"> 名<input type="text" name="last_name" size="15" value="<?= $this->input['last_name'] ?>">
+							<span style="color: red">&nbsp;<?= $this->errMsg['name'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">カタカナ&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3">姓<input type="text" name="first_name_kana"
+							size="15" value="<?= $this->input['first_name_kana'] ?>"> 名<input type="text" name="last_name_kana"
+							size="15" value="<?= $this->input['last_name_kana'] ?>">※カタカナでお願いします。<span style="color: red">&nbsp;<?= $this->errMsg['name_kana'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">性別&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3">
+						    <?php foreach ($this->gender as $k=>$v): ?> <input
+							type="radio" name="gender" id="gender_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= ($this->input['gender']==$v['tag_id']) ? ' checked ':'' ?>> <label for="gender_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp;&nbsp;
+							<?php endforeach; ?>
+						 <span style="color: red">&nbsp;<?= $this->errMsg['gender'] ?></span></td>
+					</tr>
+
+					<tr>
+						<td width="142">生年月日&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><select name="birth_day_yy">
+								<option value="">----</option>
+								<?php for ($i=1930; $i<=date('Y'); $i++ ): ?>
+								<option value="<?= $i ?>" <?= ($this->input['birth_day_yy']==$i) ? 'selected':'' ?>>
+									<?= $i ?>
+								</option>
+								<?php endfor;?>
+						</select> 年 <select name="birth_day_mm">
+								<option value="">--</option>
+								<?php for ($i=1; $i<=12; $i++ ): ?>
+								<option value="<?= $i ?>" <?= ($this->input['birth_day_mm']==$i) ? 'selected':'' ?>>
+									<?= $i ?>
+								</option>
+								<?php endfor;?>
+						</select> 月 <select name="birth_day_dd">
+								<option value="">--</option>
+								<?php for ($i=1; $i<=31; $i++ ): ?>
+								<option value="<?= $i ?>" <?= ($this->input['birth_day_dd']==$i) ? 'selected':'' ?>>
+									<?= $i ?>
+								</option>
+								<?php endfor;?>
+						</select> 日
+						<span style="color: red">&nbsp;<?= $this->errMsg['birth_day'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">郵便番号&nbsp;<span
+							class="opt">任意</span>
+						</td>
+						<td colspan="3">〒<input name="zip_code1" id="zip_code1"
+							type="text" size="3" value="<?= $this->input['zip_code1']?>" maxlength="3" />&nbsp;- <input
+							name="zip_code2" id="zip_code2" type="text" size="4" value="<?= $this->input['zip_code2']?>"
+							maxlength="4" onblur="set_pref_city();" /><br />
+						</td>
+					</tr>
+					<tr>
+						<td width="142">都道府県/市区町村&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><select name="pref_id" id="pref_id">
+								<option value="">選択してください</option>
+								<?php foreach($this->prefs as $k=>$v) : ?>
+								<option value="<?= $v['pref_id'] ?>" <?= ($this->input['pref_id']==$v['pref_id']) ? 'selected':'' ?>>
+									<?= $v['name'] ?>
+								</option>
+								<?php endforeach;?>
+						</select> <select name="city" id="city" />
+							<option value="">選択してください</option>
+							<?php if (isset($this->cities)) {?>
+							    <?php foreach($this->cities as $k=>$v) : ?>
+								<option value="<?= $v['city_code'] ?>" <?= ($this->input['city']==$v['city_code']) ? 'selected':'' ?>>
+									<?= $v['city_name'] ?>
+								</option>
+								<?php endforeach;?>
+							<?php } ?>
+							</select>
+						<span style="color: red">&nbsp;<?= $this->errMsg['pref_city'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">市区町村以下&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><input name="address" type="text" size="60" value="<?= $this->input['address'] ?>"/>
+						<span style="color: red">&nbsp;<?= $this->errMsg['address'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">自宅最寄り駅&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><select name="lines" id="lines">
+						            <option value="">選択してください</option>
+									<?php foreach ($this->lines as $line) :?>
+									<option value="<?php echo $line['line_id']?>"
+									<?= ($this->input['lines'] == $line['line_id'])? ' selected ':'' ?>>
+										<?php echo $line['name']?>
+									</option>
+									<?php endforeach; ?>
+							</select>
+							<select id="stations" name="stations">
+									<option value="">選択してください</option>
+									<?php if (isset($this->stations)):?>
+									<?php foreach ($this->stations as $v):?>
+									<option value="<?= $v['station_id'] ?>"
+									<?= ($v['station_id']==$this->input['stations']) ? ' selected ':'' ?>>
+										<?= $v['station_name'] ?>
+									</option>
+									<?php endforeach;?>
+									<?php endif; ?>
+							</select>
+							<span style="color: red">&nbsp;<?= $this->errMsg['nearby_station'] ?></span>
+							</td>
+					</tr>
+					<tr>
+						<td width="142">TEL&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><input type="text" name="tel" size="20" value="<?= $this->input['tel'] ?>"> TELは半角数字でお願いします。入力例）090-0000-0000
+						<span style="color: red">&nbsp;<?= $this->errMsg['tel'] ?></span></td>
+					</tr>
+					<tr>
+						<td width="142">MAIL&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><input type="text" name="email_address" size="50" value="<?= $this->input['email_address'] ?>">&nbsp;&nbsp; <br />メール指定受信を設定の方はメールを受信できない場合がございます。
+						<span style="color: red">&nbsp;<?= $this->errMsg['email_address'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">パスワード
+						    <?php 
+							    if ($this->input['user_id']=="") 
+                                { 
+							    echo "<span class=\"req\">必須</span>";
+							    } 
+							?>
+						</td>
+						<td colspan="3"><input type="password" name="password" size="20"
+							value="<?= $this->input['password'] ?>"> 6文字以上12文字以下で入力してください。
+							<span style="color: red">&nbsp;<?= $this->errMsg['password'] ?></span></td>
+					</tr>
+					<tr>
+						<td width="142">パスワード確認
+							<?php 
+							    if ($this->input['user_id']=="") 
+                                { 
+							    echo "<span class=\"req\">必須</span>";
+							    } 
+							?>
+						</td>
+						<td colspan="3"><input type="password" name="password2" size="20"
+							value="<?= $this->input['password2'] ?>"> 確認のため、同じパスワードを入力してください。
+							<span style="color: red">&nbsp;<?= $this->errMsg['password2'] ?></span></td>
+					</tr>
+					<tr>
+						<td width="142">希望勤務形態&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><?php foreach ($this->work_type as $k=>$v):?> <input
+							type="checkbox" name="work_type[]" id="work_type_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>"
+							<?= (isset($this->input['work_type'][$v['tag_id']])) ? ' checked ':'' ?>> <label for="work_type_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp;
+							<?php endforeach;?>
+							<br><span style="color: red">&nbsp;<?= $this->errMsg['work_type'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">希望職種&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><?php foreach ($this->categories as $k=>$v):?> <input
+							type="checkbox" name="career[]" id="career_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= (isset($this->input['career'][$v['tag_id']])) ? ' checked ':'' ?>><label for="career_<?= $v['tag_id'] ?>"><?= $v['contents']?></label>&nbsp;
+							<?php endforeach;?>
+							<br><span style="color: red">&nbsp;<?= $this->errMsg['career'] ?></span>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">勤務開始可能日&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><?php foreach ($this->start_work as $k=>$v): ?> <input
+							type="checkbox" name="start_work[]" id="start_work_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= (isset($this->input['start_work'][$v['tag_id']])) ? ' checked ':'' ?>>
+							 <label for="start_work_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp; 
+							 <?php endforeach; ?>
+							 <br><span style="color: red">&nbsp;<?= $this->errMsg['start_work'] ?></span>
+						</td>
+					</tr>
+				</table>
+				<br> <br>
+				<table id="register">
+					<tr>
+						<td width="142">店長経験&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3">
+						    <?php foreach ($this->had_manager as $k=>$v): ?> <input
+							type="radio" name="had_manager" id="had_manager_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= ($this->input['had_manager']==$v['tag_id']) ? ' checked ':'' ?>> <label for="had_manager_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp;&nbsp;
+							<?php endforeach; ?>
+							<br><span style="color: red">&nbsp;<?= $this->errMsg['had_manager'] ?></span>
+							</td>
+					</tr>
+					<tr>
+						<td width="142">実務経験&nbsp;<span
+							class="req">必須</span>
+						</td>
+						<td colspan="3"><?php foreach ($this->experience as $k=>$v): ?> <input
+							type="radio" name="experience" id="experience_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= ($this->input['experience']==$v['tag_id']) ? ' checked ':'' ?>> <label for="experience_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp;&nbsp;
+							<?php endforeach; ?>
+							<br><span style="color: red">&nbsp;<?= $this->errMsg['experience'] ?></span>
+							</td>
+					</tr>
+					<tr>
+						<td width="142">自己PR、職歴など&nbsp;<span
+							class="opt">任意</span>
+						</td>
+						<td colspan="3"><textarea rows=3 cols=55 name="self_pr"><?= $this->input['self_pr'] ?></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td width="142">保持資格&nbsp;<span
+							class="opt">任意</span>
+						</td>
+						<td colspan="3"><?php foreach ($this->skill as $k=>$v): ?> <input
+							type="checkbox" name="skill[]" id="skill_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= (isset($this->input['skill'][$v['tag_id']])) ? ' checked ':'' ?>> <label for="skill_<?= $v['tag_id'] ?>"><?= $v['contents'] ?></label>&nbsp;&nbsp;
+							<?php endforeach; ?> <input type="text" name="skill_etc"
+							size="30" value="<?= $this->input['skill_etc'] ?>"></td>
+					</tr>
+					<tr>
+						<td>就・転職サービス&nbsp;<span class="opt">任意</span>
+						</td>
+						<td>連絡可能時間帯<br> <?php foreach ($this->tel_time as $k=>$v):?> <input
+							type="checkbox" name="tel_time[]" id="tel_time_<?= $v['tag_id'] ?>" value="<?= $v['tag_id'] ?>" 
+							<?= (isset($this->input['tel_time'][$v['tag_id']])) ? ' checked ':'' ?>> <label for="tel_time_<?= $v['tag_id'] ?>"> <?= $v['contents'] ?></label>&nbsp;&nbsp;
+							<?php endforeach;?>
+						</td>
+					</tr>
+				</table>
+				<div align="center" style="padding: 10px">
+				    <input type="image" src="/pc/images/mypage/button_kakunin01.gif" value="確認" onclick="doSubmit('kakunin')">
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<!-- /#join_user -->
+</div>

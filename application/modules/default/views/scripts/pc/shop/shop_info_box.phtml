@@ -1,0 +1,46 @@
+<div class="shop_info_top">
+	<div class="shop_info_h_box">
+		<?php if ($this->shop_logo_img[0]['image_filename']!='') { ?>
+		<div class="iphoto">
+			<?= $this->shopImage()->tagByFile('shop_logo', $this->shop['shop_id'], $this->shop_logo_img[0]['image_filename']) ?>
+		</div>	
+		<?php } ?>
+		<div class="shop_info_center_box box11">
+			<h2>
+				<span class="hurigana"><?= $this->shop['shopname_kana'] ?></span><br /> <span
+					class="main_title"><?= $this->shop['shopname'] ?></span><br /> <span
+					class="catch"><?= $this->shop['shop_sub_title'] ?></span>
+			</h2>
+			<div class="add box10"><?= $this->shop['pref_city'].$this->shop['address']?></div>
+			<!--/.add-->
+		</div>
+		<!--/.right_box-->
+	</div>
+	<!--/.shop_info_center_box-->
+	<div class="clear"></div>
+	<div id="tab_navi">
+		<ul>
+			<li id="tab_navi01"><a href="/shop/<?= $this->shop['shop_id'] ?><?= isset($this->params['offer_id'])? '?offer_id='.$this->params['offer_id']:'' ?>"
+			<?php if ($this->type_page=='shopinfo') { ?>style="background: url(/pc/images/shopinfo/tab_navi.jpg) 0 -44px;"<?php } ?>></a></li>
+			<?php if (isset($this->params['offer_id'])) {?>
+			<li id="tab_navi02"><a href="/offer/<?= $this->params['offer_id'] ?>" 
+			<?php if ($this->type_page=='employ') { ?>style="background: url(/pc/images/shopinfo/tab_navi.jpg) -113px -44px;"<?php } ?>></a></li>
+			<?php } ?>
+			<li id="tab_navi03"><a href="/shop/<?= $this->shop['shop_id'] ?>/album<?= isset($this->params['offer_id'])? '?offer_id='.$this->params['offer_id']:'' ?>"
+			<?php if ($this->type_page=='album') { ?>style="background: url(/pc/images/shopinfo/tab_navi.jpg) -225px -44px;"<?php } ?>></a></li>
+			<li id="tab_navi04"><a href="/shop/<?= $this->shop['shop_id'] ?>/map<?= isset($this->params['offer_id'])? '?offer_id='.$this->params['offer_id']:'' ?>"
+			<?php if ($this->type_page=='map') { ?>style="background: url(/pc/images/shopinfo/tab_navi.jpg) -372px -44px;"<?php } ?>></a></li>
+		</ul>
+		<?php if (isset($this->offer)) {?>
+		<div class="oiwai">
+			<p><?php 
+			if ($this->offer['gift_amount']!='') {
+                echo number_format($this->offer['gift_amount']);
+            }
+			?></p>
+		</div>
+		<?php } ?>
+		<!--/.oiwai-->
+	</div>
+	<!--/#tab_navi-->
+</div>

@@ -1,0 +1,47 @@
+<style>
+<!--
+#photo_g .photo_g_box{ 
+    width: 210px; 
+    margin 10px;
+    height: 240px;
+}
+-->
+</style>
+<div class="cat">
+	<div id="contents_header_line">免責事項：
+		本サイトChooseホームページに掲載する情報、各種サイトを利用することで発生したトラブルや損失、損害に対して、Groove
+		Gearは一切責任を負いません。お客様が当ホームページに含まれる情報もしくはサービスを利用すること、及び利用することができなかったことにより生じる直接的または間接的な損失に対し、当社及び関連会社は一切責任を負うものではありません。</div>
+	<!--左上のボックス-->
+	<div id="main" class="contents_shopinfo">
+		<?php echo $this->render('shop/shop_info_box.phtml') ?>
+		<!--/.shop_info_h_box-->
+		<div class="clear"></div>
+
+		<div id="photo_g">
+			<ul>
+				<?php foreach($this->album as $img): ?>
+				<li><div class="photo_g_box">
+						<?= $this->shopImage()->tagByFile('shop_photo', $this->shop['shop_id'], $img['image_filename']) ?>
+						<p>
+							<strong><?= $img['image_title']?> </strong><br>
+							<?= $img['image_subtext'] ?>
+						</p>
+					</div>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="oubo_button">
+			<p>
+				<a href="#"><img src="/pc/images/shopinfo/button_oubo.gif" alt="" />
+				</a>
+			</p>
+		</div>
+		<div class="clear mb30"></div>
+
+	</div>
+	<!-- /#main -->
+	<?php echo $this->render('right_menu_shop.phtml') ?>
+	<!--/#sub_shop -->
+</div>

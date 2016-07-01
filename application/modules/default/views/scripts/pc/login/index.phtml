@@ -1,0 +1,38 @@
+<div class="cat">
+<div id="container" class="inner info_container">
+	<div id="form_touroku_user" class="mypage_contents">
+
+		<h3>ユーザー ログイン</h3>
+		<form action="/login/check<?= (isset($this->params['offer_id']))? '?offer_id='.$this->params['offer_id']:'' ?>" method="post">
+			<table class="form_table01">
+				<tr>
+					<td style="background: #eee;">E-Mail</td>
+					<td><input name="email" type="text" size="30" value="" /> <br />※ご登録のメールアドレス
+					<br><span style="color: red"><?= $this->errMsg['email'] ?></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="background: #eee;">パスワード</td>
+					<td><input name="password" type="password" size="30" value="" />
+					<br><span style="color: red"><?= $this->errMsg['password'] ?></span>
+					</td>
+				</tr>
+			</table>
+			<table class="form_button02">
+				<tr>
+					<td width="99"><input type="image"
+						src="/pc/images/toppage/s_form_icon01.gif" class="user_login05" />
+					</td>
+					<td width="99"><input type="image"
+						src="/pc/images/toppage/s_form_icon02.gif" class="user_login03" />
+					</td>
+				</tr>
+			</table>
+			<p style="text-align: center;">
+				<a href="#">→パスワードを忘れた方はこちら</a>
+			</p>
+		</form>
+	</div>
+</div>
+<!-- /#container -->
+</div>

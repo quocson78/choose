@@ -1,0 +1,108 @@
+	<style>
+	#shashin_osusume .descr p{ margin: 5px 5px 5px 10px; font-size: 14px; height: 74px;}
+	</style>
+	<div class="cat">
+	<div id="contents_header_line">免責事項：
+		本サイトChooseホームページに掲載する情報、各種サイトを利用することで発生したトラブルや損失、損害に対して、Groove
+		Gearは一切責任を負いません。お客様が当ホームページに含まれる情報もしくはサービスを利用すること、及び利用することができなかったことにより生じる直接的または間接的な損失に対し、当社及び関連会社は一切責任を負うものではありません。</div>
+	<!--左上のボックス-->
+	<div id="main" class="contents_shopinfo">
+		<?php echo $this->render('shop/shop_info_box.phtml') ?>
+		<!--/.shop_info_h_box-->
+		<div class="clear"></div>
+
+		<div class="shop_info_center_area">
+			<div class="shop_shokai_top_box">
+				<div class="left_box">
+					<?= $this->shopImage()->tagByFile('shop_main', $this->shop['shop_id'], $this->shop_title_img[0]['image_filename']) ?>
+				</div>
+				<div class="right_box">
+					<h2><?= $this->shop['title'] ?></h2>
+					<p><?= $this->shop['subtext'] ?></p>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="oubo_button">
+				<p>
+					<a href="#"><img src="/pc/images/shopinfo/button_oubo.gif" alt="" />
+					</a>
+				</p>
+			</div>
+			<div class="cips">
+				<div class="cips_title"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<div id="shashin_osusume" class="second_center_area">
+			<h2>写真でわかるおすすめポイント！</h2>
+			<?php foreach ($this->recommends as $k=>$v) :?>
+			<div class="<?= (($k%2)==0)? 'contents_left':'contents_right' ?>">
+				<h3><?= $v['recommend_title'] ?></h3>
+				<div class="descr">
+					<p><?= $v['recommend_subtitle'] ?></p>
+				</div>
+				<div class="photo01">
+					<?php if (isset($this->recommend_images[$k])) { ?>
+					<?= $this->shopImage()->tagByFile('shop_recommend', $this->shop['shop_id'], $this->recommend_images[$k]['image_filename']) ?>
+					<?php } ?>
+				</div>
+				<div class="shop_name"><?= $this->shop['shopname_kana'] ?> <?= $this->shop['shopname'] ?></div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+		<div class="clear"></div>
+
+		<div id="message_area">
+			<div class="message_area_box">
+				<div class="photo">
+				    <?php if (isset($this->shop_owner_img[0])) {?>
+					<?= $this->shopImage()->tagByFile('shop_owner', $this->shop['shop_id'], $this->shop_owner_img[0]['image_filename']) ?>
+					<?php } else{ ?>
+					<img src="/pc/images/shopinfo/choose_small.gif" alt=""  width="108px" height="109px"/>
+					<?php } ?>
+				</div>
+				<div class="contents_left">
+					<h3>オーナーからのメッセージ</h3>
+					<p>
+						<?= $this->shop['owner_name'] ?><br /> <?= $this->shop['owner_position_name'] ?>
+					</p>
+				</div>
+				<div class="contents_right">
+					<p><?= $this->shop['owner_message'] ?></p>
+				</div>
+			</div>
+			<div class="message_area_box">
+				<div class="photo">
+				    <?php if (isset($this->shop_staff_img[0])) {?>
+					<?= $this->shopImage()->tagByFile('shop_staff', $this->shop['shop_id'], $this->shop_staff_img[0]['image_filename']) ?>
+					<?php } else{ ?>
+					<img src="/pc/images/shopinfo/choose_small.gif" alt=""  width="108px" height="109px"/>
+					<?php } ?>
+				</div>
+				<div class="contents_left">
+					<h3>スタッフからのメッセージ</h3>
+					<p>
+						<?= $this->shop['stuff_name'] ?><br /> <?= $this->shop['stuff_position_name'] ?>
+					</p>
+				</div>
+				<div class="contents_right">
+					<p><?= $this->shop['stuff_message'] ?></p>
+				</div>
+
+			</div>
+			<div class="clear"></div>
+			<div class="oubo_button">
+				<p>
+					<a href="#"><img src="/pc/images/shopinfo/button_oubo.gif" alt="" />
+					</a>
+				</p>
+			</div>
+		</div>
+		<?php echo $this->render('shop/shop_more_info.phtml'); ?>
+		<div class="clear mb30"></div>
+	</div>
+	<!-- /#main -->
+	<?php echo $this->render('right_menu_shop.phtml') ?>
+	<!--/#sub_shop -->
+	<div class="cat">

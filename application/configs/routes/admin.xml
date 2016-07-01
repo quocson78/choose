@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+<default>
+    <route>:roll/:controller/:action/*</route>
+    <defaults>
+        <action>index</action>
+    </defaults>
+</default>
+<index>
+    <route></route>
+    <defaults>
+        <controller>menu</controller>
+        <action>index</action>
+    </defaults>
+</index>
+<login>
+    <route>login/:action</route>
+    <defaults>
+        <controller>login</controller>
+        <action>index</action>
+    </defaults>
+</login>
+<notlogin>
+    <route>:controller</route>
+    <defaults>
+        <action>index</action>
+    </defaults>
+</notlogin>
+<help>
+    <route>help/:file</route>
+    <defaults>
+        <controller>index</controller>
+        <action>index</action>
+        <roll>help</roll>
+    </defaults>
+</help>
+
+<images type="Zend_Controller_Router_Route_Regex">
+    <route>(images/(\d+)/(\d+)/(.+)-(.+?))</route>
+    <defaults>
+        <roll>index</roll>
+        <controller>images</controller>
+        <action>index</action>
+    </defaults>
+    <map>
+        <full_path>1</full_path>
+        <round>2</round>
+        <shop_id>3</shop_id>
+        <type>4</type>
+        <file>5</file>
+    </map>
+</images>
+
+</routes>

@@ -1,0 +1,22 @@
+<?php
+    $this->render('_head.phtml');
+?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <?= $this->headTitle() ?>
+    <?= $this->headLink() ?>
+    <?= $this->headScript() ?>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">トップ</a></li>
+            <li><a href="/logout/">ログアウト</a></li>
+        </ul>
+    </header>
+
+    <?= $this->layout()->content ?>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+<default>
+    <route>:controller/:action/*</route>
+    <defaults>
+        <controller>index</controller>
+        <action>index</action>
+    </defaults>
+</default>
+</routes>

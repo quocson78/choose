@@ -1,0 +1,236 @@
+<style>
+    #map_box {
+        position: relative;
+        width: 397px;
+        height: 389px;
+    }
+
+    #map_box img {
+        position: absolute;
+        left:0;
+        top:0;
+    }
+
+    #map_box .region {
+        display: none;
+    }
+
+    #map_box ul.prefectures {
+        position: absolute;
+        left: 35px;
+        top: 100px;
+        width:180px;
+        background-color: #eee;
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    #map_box ul.prefectures li {
+        float:left;
+        margin: 2px 0;
+        margin-left: -1px;;
+        padding:0 3px;
+        display: none;
+        border-left:1px solid #999;
+    }
+</style>
+<br>
+<div class="cat">
+    <input type="hidden" name="category" id="category"	value="<?= $this->category;?>">
+    <!--左上のボックス-->
+    <div id="main" class="cat_contents">
+        <div id="areamap_box">
+            <div id="search-by-area">
+                <div id="map_box">
+                    <img class="region hokkaidou" src="/pc/images/category/hokkaidou.png" alt="" width="397" height="389" />
+                    <img class="region touhoku" src="/pc/images/category/touhoku.png" alt="" width="397" height="389" />
+                    <img class="region kantou" src="/pc/images/category/kantou.png" alt="" width="397" height="389" />
+                    <img class="region hokuriku" src="/pc/images/category/hokuriku.png" alt="" width="397" height="389" />
+                    <img class="region tyubu" src="/pc/images/category/tyubu.png" alt="" width="397" height="389" />
+                    <img class="region kinki" src="/pc/images/category/kinki.png" alt="" width="397" height="389" />
+                    <img class="region shikoku" src="/pc/images/category/shikoku.png" alt="" width="397" height="389" />
+                    <img class="region kyushu" src="/pc/images/category/kyushu.png" alt="" width="397" height="389" />
+                    <img usemap="#map" id="japan" src="/pc/images/category/dummy.png" alt="" width="397" height="389"/>
+                    <map name="map" id="map">
+                        <area shape="poly" alt="北海道" coords="247,58,307,58,307,88,247,88" href="#" id="hokkaidou" data-region="1" />
+                        <area shape="poly" alt="東北" coords="298,185,358,185,358,215,298,215" href="#" id="touhoku" data-region="2" />
+                        <area shape="poly" alt="関東" coords="260,260,320,260,320,290,260,290" href="#" id="kantou" data-region="3" />
+                        <area shape="poly" alt="北陸" coords="148,188,208,188,208,218,148,218" href="#" id="hokuriku" data-region="4" />
+                        <area shape="poly" alt="中部" coords="191,304,251,304,251,334,191,334" href="#" id="tyubu" data-region="5" />
+                        <area shape="poly" alt="近畿" coords="110,310,170,310,170,340,110,340" href="#" id="kinki" data-region="6" />
+                        <area shape="poly" alt="中国・四国" coords="33,215,113,215,113,245,33,245" href="#" id="shikoku" data-region="7" />
+                        <area shape="poly" alt="九州・沖縄" coords="20,340,100,340,100,370,20,370" href="#" id="kyushu" data-region="8" />
+                    </map>
+                    <ul class="prefectures">
+                        <?php foreach ($this->prefs as $pref): ?>
+                            <li data-region="<?= $pref['region_id'] ?>"><a href="/<?= $this->category ?>/area/<?= $pref['name'] ?>/"><?= $pref['name'] ?></li>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+                <div class="free-search">
+                    <h2>
+                        <span>路線から探す</span><a href="#"><img
+                            src="/pc/images/cat/search_icon01.gif" alt="" /> </a>
+                    </h2>
+                    <form id="frm_search_line" method="post">
+                        <div class="searchbox">
+                            <p>1. 都道府県を選択</p>
+                            <div class="select_box">
+                            <select id="prefs" name="prefs" style="width: 250px">
+                                <option value=''>選択ください</option>
+                                <?php foreach ($this->prefs as $pref) {
+                                    echo "<option value='".$pref['name']."'>".$pref['name']."</option>";
+                                    }?>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="searchbox">
+                            <p>2. 路線を選択</p>
+                            <div class="select_box">
+                            <select id="line_name" name="line_name" style="width: 250px">
+                            </select>
+                            </div>
+                        </div>
+                        <div class="freeword">
+                            <h2>
+                                <span>フリーワード一発検索</span>
+                            </h2>
+                            <input type="text" name="keywords" size="35" value=""
+                                class="freetext" /><br />
+                                <input type="submit" value="検索をする" class="free_submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="serch_navi_box">
+            <div id="cat_kod_box" class="cat_box">
+                <div class="left_box01">
+                    <p>こだわり特殊<br>
+                    Special Edition</p>
+                </div>
+                <div class="right_box01">
+                    <div class="section01">
+                        <p class="left"><a href="#">急募！積極採用中！</a></p>
+                        <p class="right"><a href="#">一生モノの技術が身に付く！</a></p>
+                    </div>
+                    <div class="section02">
+                        <p class="left"><a href="#">オープニングスタッフ募集</a></p>
+                        <p class="right"><a href="#">魅力の高時給・高歩合サロン</a></p>
+                    </div>
+                </div>
+            </div>
+            <div id="cat_area_box">
+                <div class="section01">
+                    <div class="left_box01"><p>人気のエリアから探す</p></div>
+                    <div class="left_box02"><p>Popular Area Search</p></div>
+                    <div class="right_box01"><p><a href="#">全国のエリアから探す</a></p></div>
+                </div>
+                <div class="section02">
+                    <ul>
+                        <li><a href="#">渋谷渋谷渋谷渋谷渋谷渋谷</a></li>
+                        <li><a href="#">新宿</a></li>
+                        <li><a href="#">池袋</a></li>
+                        <li><a href="#">横浜</a></li>
+                        <li><a href="#">大阪</a></li>
+                        <li><a href="#">名古屋</a></li>
+                        <li><a href="#">神戸</a></li>
+                        <li><a href="#">福岡</a></li>
+                        <li><a href="#">銀座</a></li>
+                        <li><a href="#">京都</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="cat_fua_box">
+                <div class="section01">
+                    <div class="left_box01"><p>人気の特徴から探す</p></div>
+                    <div class="left_box02"><p>Fuature Search</p></div>
+                    <div class="right_box01"><p><a href="#">全国の特徴から探す</a></p></div>
+                </div>
+                <div class="section02">
+                <ul>
+                    <li><a href="#">駅近駅近駅近駅近駅近駅近駅近駅近</a></li>
+                    <li><a href="#">シフト制</a></li>
+                    <li><a href="#">ボーナスあり</a></li>
+                    <li><a href="#">ノルマなし</a></li>
+                    <li><a href="#">アットホーム</a></li>
+                    <li><a href="#">大手サロン</a></li>
+                    <li><a href="#">未経験OK</a></li>
+                    <li><a href="#">スカルプチュア</a></li>
+                    <li><a href="#">ジェルネイル</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="osusume_area">
+            <h2>おすすめ求人</h2>
+            <ul>
+                <?php
+                foreach ($this->offers as $k=>$offer){
+                    if ($k>0 && ($k%4==0)) echo "</ul><ul>"; ?>
+                <li <?= ($k==0 || ($k%4==0))? "class='left'" : "" ?>>
+                    <?= $this->shopImage()->tagByFile('offer_recommend', $offer['shop_id'], $offer['image_filename']) ?>
+                    <div class="title01">
+                        <a href='/offer/<?= $offer['offer_id'] ?>'><?= $offer['shopname_kana'] ?> </a>
+                    </div>
+                    <div>【<?= $offer['shop_typename'] ?>】【<?= $offer['stations'] ?>】
+                        <?= $offer['offer_subtext']; ?>
+                    </div>
+                </li>
+                <?php
+                }
+                ?>
+            </ul>
+        </div>
+        <div id="text_box_area">エステサロン】【中野】 中野駅より徒歩3分!オールハンドのマッサージに自信があります...
+
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- /#main -->
+    <?php echo $this->render('right_menu.phtml') ?>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$("#map area").hover(
+        function(){
+            $("#map_box .region").stop();
+            $("#map_box .prefectures").stop();
+
+            var region = $(this).attr("id");
+            var id = $(this).attr("data-region");
+
+            $("#map_box .region:not(." + region + ")").hide();
+            $("#map_box .region." + region).fadeIn(function(){
+                $("#map_box .prefectures li[data-region!=" + id + "]").hide();
+                $("#map_box .prefectures li[data-region=" + id + "]").show();
+            });
+        });
+
+	$('#prefs').change(function(){
+		var pref_name = $(this).val();
+	    $.getJSON('/category/get-lines', {pref_name: pref_name}, function(data){
+		    var str_html = "<option value=''>選択してください</option>";
+	        for (var i=0; i<data.length; i++){
+	        	str_html += "<option value='"+data[i]['name']+"'>"+data[i]['name']+"</option>";
+	        }
+
+	        $('#line_name').html(str_html);
+		});
+	});
+
+	$('#frm_search_line').submit(function(){
+		if ($('#prefs').val() == ''){
+			$('#frm_search_line').attr('action', '/search/index?category='+$('#category').val());
+		}else{
+			if ($('#line_name').val()!=''){
+				$('#frm_search_line').attr('action', '/'+$('#category').val()+'/line/'+$('#line_name').val());
+			}else{
+				$('#frm_search_line').attr('action', '/'+$('#category').val()+'/area/'+$('#prefs').val());
+			}
+		}
+	});
+});
+</script>

@@ -1,0 +1,132 @@
+<div id="footerarea" class="inner">
+	<div id="footer_area_box" class="box25">
+		<div id="footer_navi_box">
+			<table style="width: 500px">
+				<tr>
+					<th style="width: 80px;">注目のエリア</th>
+					<td>
+						<ul class="footer_navi_box_headline">
+							<li><a href="umeda/">梅田駅</a></li>
+							<li><a href="shinsaibashi/">心斎橋駅</a></li>
+							<li><a href="nanba/">難波駅</a></li>
+							<li><a href="omiya/">大宮駅</a></li>
+							<li><a href="sapporo/">札幌市</a></li>
+							<li><a href="sendai/">仙台市</a></li>
+							<li><a href="sakai/">堺駅</a></li>
+							<li><a href="harajuku/">原宿駅</a></li>
+							<li><a href="omotesando/">表参道駅</a></li>
+							<li><a href="kawasaki/">川崎市</a></li>
+							<li><a href="/hamamatsu/">浜松市</a></li>
+							<li><a href="funabashi/">船橋市</a></li>
+							<li><a href="saitama/">さいたま市</a></li>
+							<li><a href="fukuoka/">福岡市</a></li>
+							<li><a href="shizuoka/">静岡市</a></li>
+							<li><a href="kyoto/">京都市</a></li>
+							<li><a href="akihabara/">秋葉原駅</a></li>
+							<li><a href="ginza/">銀座駅</a></li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<table class="footer_navi_box_cat_box" style="float: left; width: 350px;">
+			<?php for ($i=0; $i<3; $i++): ?>
+				<tr>
+					<th style="width: 80px;"><?php echo $this->regions[$i]['name']?></th>
+					<td>
+						<ul>
+							<?php foreach ($this->regions[$i]['prefs'] as $pref) :
+							if (isset($this->category)) $url = '/'.$this->category.'/area/'.$pref['name'];
+							else $url = '/all/area/'.$pref['name'];
+							?>
+							<li><a href="<?php echo $url ?>" title="<?php echo $pref['name']?>(<?php echo $this->arr_cities[$pref['name']]?>)"><?php echo str_replace(array('県','府'),'',$pref['name'])?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					</td>
+				</tr>
+			<?php endfor; ?>
+			</table>
+			<table class="footer_navi_box_cat_box" style="float: left; width: 350px;">
+				<?php for ($i=3; $i<6; $i++): ?>
+				<tr>
+					<th style="width: 60px;"><?php echo $this->regions[$i]['name']?></th>
+					<td>
+						<ul>
+							<?php foreach ($this->regions[$i]['prefs'] as $pref) :
+							if (isset($this->category)) $url = '/'.$this->category.'/area/'.$pref['name'];
+							else $url = '/all/area/'.$pref['name'];
+							?>
+							<li><a href="<?php echo $url ?>" title="<?php echo $pref['name']?>(<?php echo $this->arr_cities[$pref['name']]?>)"><?php echo str_replace(array('県','府'),'',$pref['name'])?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					</td>
+				</tr>
+				<?php endfor; ?>
+			</table>
+		</div>
+		<!--#footer_navbox-->
+		<div class="to_top"><p><a href="#"><img src="/pc/images/toppage/t_arrow.gif" alt="" /><span>ページ上部へ</span></a></p></div>
+	</div>
+	<!--#footer_area_box-->
+	<div id="footer_link_area" class="box25">
+		<div id="footer_link_box">
+
+			<div class="link_cat_box01">
+				<ul class="link_s_cat_box01">
+					<li class="s_cat_title">チューズについて</li>
+					<li><a href="/info/agreement">利用規約</a></li>
+					<li><a href="/info/privacypolicy">プライバシーポリシー</a></li>
+					<li><a href="/info/company">会社概要</a></li>
+				</ul>
+				<ul class="link_s_cat_box01">
+					<li class="s_cat_title">求人者様メニュー</li>
+					<li><a href="/mypage/regist">新規会員登録</a></li>
+					<li><a href="/mypage">マイページ</a></li>
+				</ul>
+			</div>
+			<div class="link_cat_box02">
+
+				<div class="s_cat_title02">チューズ取り扱い業種</div>
+				<div class="box8">
+					<ul class="link_s_cat_box02">
+						<li>美容</li>
+						<li>エステ</li>
+						<li>ネイル</li>
+						<li>アイリスト</li>
+						<li>美容師</li>
+						<li>美容部員</li>
+						<li>全求人</li>
+					</ul>
+
+					<ul class="link_s_cat_box02">
+						<li>リラクゼーション</li>
+						<li>セラピスト</li>
+						<li>アロマ</li>
+						<li>マッサージ</li>
+						<li>リフレクソロジー</li>
+						<li>整体師</li>
+						<li>カイロ</li>
+					</ul>
+
+					<ul class="link_s_cat_box03">
+						<li>治療</li>
+						<li>柔道整復師</li>
+						<li>マッサージ師</li>
+						<li>鍼灸師</li>
+						<li>フィットネス</li>
+						<li>ヨガ</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer_logo_area">
+		<!-- <a href="#"><img src="<?php echo $this->urlImg; ?>/toppage/g_sign.png" alt="" /> </a>-->
+	</div>
+	<div id="copyright">
+		<p>
+			Copyright (C) 2013- Groove Gear Co.,Ltd. All Rights Reserved.
+		</p>
+	</div>
+</div>
+<!-- /#footerarea -->

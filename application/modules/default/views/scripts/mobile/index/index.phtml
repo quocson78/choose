@@ -1,0 +1,32 @@
+<script lang="javascript">
+$(function(){
+    $('.div_search').click(function(){
+        tag_id = $(this).attr('tag_id');
+        $('#tbl_search_'+tag_id).toggle();
+    });
+});
+</script>
+<div class="bground_bar">求人を探す</div>
+<div style="height: 50px;">
+    <a href="search/search-form">ラクに見つかる一発検索</a>
+</div>
+<div class="bground_bar">種類から探す</div>
+<div style="padding: 7px;">
+    <?php foreach ($this->data_center as $data) : 
+    $tag_child_name = '';
+    foreach ($data['children'] as $child){
+        $tag_child_name .= $child['contents'].'・';
+    }
+    $tag_child_name = substr($tag_child_name, 0, strlen($tag_child_name)-3);
+    ?>
+    <div style="border: #993333 1px solid; margin:5px">
+        <div style="padding: 10px; cursor: pointer;" class="div_search" tag_id="<?= $data['tag_id'] ?>"><?= $data['contents']?><br><?= $tag_child_name;?> </div>
+        <ul id="tbl_search_<?= $data['tag_id'] ?>" class="listview">
+            <?php foreach ($data['children'] as $child): ?>
+            <li><?= $child['contents']?></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+    <?php endforeach ?>
+</div>
+<div class="bground_bar">お役立ちコンテンツ</div>

@@ -1,0 +1,8 @@
+<form method="post" action="/tools/xpath">
+    <textarea name="doc" style="width:100%;height:100px"><?= e($this->params['doc']) ?></textarea>
+    <input type="text" name="xpath" style="width:400px" value="<?= e($this->params['xpath']) ?>"/>
+    <button type="submit">search</button>
+</form>
+<textarea style="width:100%;height:100px">
+<?php var_dump($this->result) ?>
+</textarea>

@@ -1,0 +1,30 @@
+<div class="cat">
+<div class="top_page_banner_form_lib">
+	<form id="frmForm1" method="post" action="/index/pre-regist?faq=1">
+		<table>
+			<tr>
+				<td class="td_left" width="110"><span>※</span>メールアドレス</td>
+				<td><input type="text" name="email_address" id="email_address"
+					class="text_box02" value="<?= $this->input['email_address'] ?>" />
+					<span style="color: red">&nbsp;<?= $this->errMsg['email_address'] ?>
+				</span></td>
+			</tr>
+			<tr>
+				<td class="td_left"><span>※</span>姓</td>
+				<td><input type="text" name="first_name" id="first_name"
+					class="text_box03" value="<?= $this->input['first_name'] ?>" /> <span
+					style="color: red">※</span>名<input type="text" name="last_name"
+					id="last_name" class="text_box03"
+					value="<?= $this->input['last_name'] ?>" /> <span
+					style="color: red">&nbsp;<?= $this->errMsg['name'] ?>
+				</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" id="form1_button" value="登録"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</div>

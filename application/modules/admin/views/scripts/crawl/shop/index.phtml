@@ -1,0 +1,124 @@
+<?php
+    $tags = new App_Model_DbTable_Tags;
+    $tagDisplay = new App_Model_DbTable_TagDisplay;
+
+    $categories = $tags->getPairsByLowerId(App_Model_DbTable_Tags::LOWER_CATEGORY);
+
+    $types = null;
+    foreach ($categories as $id => $cat) {
+        $types[$id] = $tagDisplay->getChildren($id);
+    }
+?>
+<style>
+    header {
+        margin-left: 50%;
+    }
+
+    iframe {
+        position: fixed;
+        top: 0;
+        float:left;
+        display: block;
+        width:50%;
+        height:100%;
+    }
+
+    .input {
+        float:right;
+        width:45%;
+    }
+
+    input[type=text],
+    textarea {
+        width:90%;
+    }
+
+    textarea {
+        height:150px;
+    }
+
+    button,
+    input[type=button],
+    input[type=submit] {
+        margin:0 20px;
+    }
+
+    dt, dd {
+        clear: both;
+    }
+
+    #category-element:after,
+    #types-element:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+    #category-element label,
+    #types-element label {
+        float:left;
+        width:180px;
+    }
+
+    #category-element br,
+    #types-element br {
+        display: none;
+    }
+
+    #category-element ul,
+    #types-element ul {
+        clear:both;
+    }
+</style>
+<script type="text/javascript">
+$(function(){
+    var types = <?=json_encode($types) ?>;
+
+    var color;
+    for (var cat_id in types) {
+
+        if ("#eee" == color) {
+            color = "#fff";
+        } else {
+            color = "#eee";
+        }
+
+        for (var id in types[cat_id]) {
+            $("#types-" + types[cat_id][id].tag_id)
+                .parent()
+                .css('background-color', color);
+        }
+    }
+
+	$('#pref_id').change(function(){
+	    $('#city_code').load(
+            '/ajax/prefecture/cities/',
+            {id: $(this).val()});
+	});
+});
+</script>
+<div class="clearfix">
+    <?php if ($this->offer['recruit_url']): ?>
+        <iframe src="<?= $this->offer['recruit_url'] ?>"></iframe>
+    <?php else: ?>
+        <iframe src="<?= $this->offer['url'] ?>"></iframe>
+    <?php endif; ?>
+    <div class="input">
+        <?php if ($this->messages): ?>
+            <ul class="errors">
+                <?php foreach ($this->messages as $msg): ?>
+                    <li><?= $msg ?></li>
+                <?php endforeach ?>
+            </ul>
+        <?php endif ?>
+        <p>
+            No.<?= $this->offer['no'] ?>&nbsp;
+            <a href="<?= $this->offer['url'] ?>" target="_blank"><?= e($this->offer['shopname']) ?></a>
+        </p>
+        <?php if ($this->form): ?>
+            <?= $this->form ?>
+        <?php else: ?>
+            No.<?= (int)$this->params['no'] ?> 以降の未処理なクロール求人はありません。
+        <?php endif ?>
+    </div>
+</div>

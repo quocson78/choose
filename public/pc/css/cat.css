@@ -1,0 +1,497 @@
+@charset "utf-8";
+
+/*#cat esthe 
+-----------------------------------*/
+
+.cat_contents{ color: #000;}
+.cat_contents a{ color:  #3a0094;}
+.cat_contents a:hover{ color:  #3a0094;}
+
+.cat_contents {
+		width: 700px;
+	min-height: 600px;
+	margin-left: 19px;
+	margin-bottom: 10px;
+}
+
+#areamap_box{
+	width:700px;
+	min-height: 390px;
+	overflow: hidden;
+	color: #333;
+}
+
+#map_box {
+	width: 397px;
+	background: url(../images/category/japan.png) no-repeat;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.map_area_link_box{
+	top: 50px;
+	left: 50px;
+	min-width: 180px;
+	min-height: 18px;
+	position:absolute;
+	background: #E8E8E8;
+	overflow: hidden;
+}
+
+.map_area_link_box a{
+	height: 10px;
+	border-left: 1px solid #333;
+	z-index: 200;
+}
+
+.map_area_link_box p{
+	height: 10px;
+}
+
+.searchbox{
+	width: 300px;
+	height: 73px;
+	background: url(../images/cat/huki_box.gif) no-repeat;
+	overflow: hidden;
+}
+
+.searchbox p{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-bottom: 1px;
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+}
+
+.searchbox .select_box{
+	margin-left: 20px;
+}
+
+.searchbox .select_box select{
+	width: 240px;
+	height: 25px;
+}
+
+.free-search {
+  width: 280px;
+  margin-left: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+.free-search h2{
+	margin-top: 20px;
+	margin-right: 5px;
+	margin-bottom:20px;
+	padding-bottom: 1px;
+	line-height: 20px;
+	font-weight: bold;
+	border-bottom: 2px solid #9E56AF;
+}
+
+.free-search h2 span{
+	margin-right: 50px;
+	font-size: 18px;
+}
+
+.freeword h2{
+	margin-top: 5px;
+	margin-right: 5px;
+	padding-bottom: 1px;
+	line-height: 20px;
+	font-weight: bold;
+	border-bottom: 2px solid #9E56AF;
+}
+
+.freetext{
+	height: 21px;
+	width: 266px;
+	margin-bottom: 10px;
+}
+
+.freesubmit{
+	width; 100px;
+	height: 30px;
+}
+
+.free_submit{
+	width: 100px;
+	height: 32px;
+	margin-left: 185px;
+	line-height: 32px;
+	border: 0;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background: url(../images/cat/search_button01.gif) no-repeat ;
+}
+
+
+#serch_navi_box{
+	width:700px;
+	min-height: 300px;
+	margin-top: 10px;
+	overflow: hidden;
+	color: #333;
+}
+
+#cat_kod_box{
+	width: 680px;
+	min-height: 40px;
+	border: 10px solid #ddd;
+	overflow: hidden;
+}
+
+#cat_kod_box .left_box01{
+	overflow: hidden;
+	float: left;
+}
+#cat_kod_box .left_box01 p{
+	width: 144px;
+	height: 52px;
+	margin-top: 6px;
+	margin-left: 6px;
+	padding-left: 11px;
+	padding-top: 13px;
+	background: url(../images/cat/t_bg01.gif) no-repeat;
+	overflow: hidden;
+	color: #fff;
+}
+
+#cat_kod_box .right_box01{
+	overflow: hidden;
+	float: left;
+}
+
+#cat_kod_box .section01{
+	width: 500px;
+	margin-top: 10px;
+	padding-bottom: 8px;
+	border-bottom: 2px dotted #A461B4;
+	overflow: hidden;
+	}
+	
+#cat_kod_box .section02{
+	width: 500px;
+	margin-top: 9px;
+	overflow: hidden;
+	}
+	
+#cat_kod_box .left{
+	width: 220px;
+	padding-left: 20px;
+	float: left;
+	background: url(../images/cat/arrow.gif) 3px 3px no-repeat;
+	}
+	
+#cat_kod_box .right{
+	width: 220px;
+	padding-left: 20px;
+	float: right;
+	background: url(../images/cat/arrow.gif) 3px 3px no-repeat;
+	}
+	
+#cat_kod_box .border01{ border: 2px dotted #C39;}
+
+#cat_area_box{
+	width: 680px;
+	min-height: 60px;
+	margin-top: 10px;
+	border: 10px solid #ddd;
+	overflow: hidden;
+}
+
+#cat_area_box .section01{
+	overflow:hidden;
+}
+
+#cat_area_box .section01 .left_box01{
+	width:160px;
+	overflow: hidden;
+	float: left;
+}
+
+#cat_area_box .section01 .left_box01 p{
+	width: 144px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 6px;
+	padding-top: 2px;
+	padding-left: 10px;
+	background: url(../images/cat/t_bg02.gif) no-repeat;
+	overflow: hidden;
+	color: #fff;
+}
+
+#cat_area_box .section01 .left_box02{
+	width:160px;
+	overflow: hidden;
+	float: left;
+}
+
+#cat_area_box .section01 .left_box02 p{
+	width: 144px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 6px;
+	padding-top: 2px;
+	overflow: hidden;
+}
+
+#cat_area_box .section01 .right_box01{
+		width:160px;
+	overflow: hidden;
+	float: right;
+}
+#cat_area_box .section01 .right_box01 p{
+		width:132px;
+		height: 20px;
+		margin-top: 5px;
+		padding-top: 2px;
+		padding-left: 20px;
+		font-size: 8px;
+	background: url(../images/cat/search_icon.gif) no-repeat;
+	overflow: hidden;
+}
+
+
+#cat_area_box .section02{
+	width: 680px;
+	margin-top: 7px;
+	float:left;
+	overflow: hidden;
+}
+#cat_area_box .section02 ul{
+	margin-left: 30px;
+	overflow: hidden;}
+#cat_area_box .section02 li{
+	width: 50px;
+	padding-left: 15px;
+	background: url(../images/cat/arrow.gif) 3px 3px no-repeat;
+	float:left;
+}
+
+#cat_fua_box{
+	width: 680px;
+	min-height: 78px;
+	margin-top: 10px;
+	border: 10px solid #ddd;
+	overflow: hidden;
+}
+
+#cat_fua_box .section01{
+	overflow:hidden;
+}
+
+#cat_fua_box .section01 .left_box01{
+	width:160px;
+	overflow: hidden;
+	float: left;
+}
+
+#cat_fua_box .section01 .left_box01 p{
+	width: 144px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 6px;
+	padding-top: 2px;
+	padding-left: 10px;
+	background: url(../images/cat/t_bg02.gif) no-repeat;
+	overflow: hidden;
+	color: #fff;
+}
+
+#cat_fua_box .section01 .left_box02{
+	width:160px;
+	overflow: hidden;
+	float: left;
+}
+
+#cat_fua_box .section01 .left_box02 p{
+	width: 144px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 6px;
+	padding-top: 2px;
+	overflow: hidden;
+}
+
+#cat_fua_box .section01 .right_box01{
+		width:160px;
+	overflow: hidden;
+	float: right;
+}
+#cat_fua_box .section01 .right_box01 p{
+		width:132px;
+		height: 20px;
+		margin-top: 5px;
+		padding-top: 2px;
+		padding-left: 20px;
+		font-size: 8px;
+	background: url(../images/cat/search_icon.gif) no-repeat;
+	overflow: hidden;
+}
+
+
+#cat_fua_box .section02{
+	width: 680px;
+	margin-top: 7px;
+	float:left;
+	overflow: hidden;
+}
+#cat_fua_box .section02 ul{
+	margin-left: 30px;
+	overflow: hidden;}
+#cat_fua_box .section02 li{
+	width: 110px;
+	padding-left: 15px;
+	line-height: 1.8;
+	background: url(../images/cat/arrow.gif) 3px 3px no-repeat;
+	float:left;
+}
+
+
+#osusume_area{
+	overflow: hidden;
+}
+
+#osusume_area h2{
+	height: 30px;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding-left: 20px;
+	line-heigth: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #666;
+	background: url(../images/cat/t_bar01.png) no-repeat;
+}
+
+#osusume_area span {  
+	font-weight: bold;
+	color: #500591;
+}  
+
+#osusume_area ul {  
+ width:700px;
+ margin-top: 10px;
+}
+  
+#osusume_area li{
+	width: 153px;
+	min-height: 280px; 
+	margin-left: 13px;
+	margin-bottom: 10px;
+	border: 1px solid #999; 
+	padding:7px 0 7px 10px;  
+	font-weight:bold;
+	float: left;  
+}
+
+#osusume_area li.left {
+	margin-left: 0;
+}
+
+#osusume_area li .image01 {
+	width: 142px;
+	height: 100px;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	margin-left: 0;
+}
+
+#osusume_area li .title01 {
+	width: 142px;
+	margin-left: 0;
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#osusume_area li .text01 {
+	width: 142px;
+	margin-left: 0;
+	margin-top: 5px;
+	font-size: 11px;
+	line-height: 2;
+}
+
+#adv_area{
+	width: 700px;
+	overflow: hidden;
+	}
+
+
+#adv_area h2{
+	height: 30px;
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-left: 20px;
+	line-heigth: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #666;
+	background: url(../images/cat/t_bar01.png) no-repeat;
+}
+
+#adv_area .section01{
+	margin-top: 10px;
+	overflow:hidden;
+	}
+	
+#adv_area .section01 .left_box{
+	width: 215px;
+	margin-right: 20px;
+	padding-rigth: 5px;
+	border-right: 2px dotted #3C3F96;
+	overflow:hidden;
+	float: left;
+	}
+	
+#adv_area .section01 .left_box .title01{
+	font-size: 14px;
+	overflow:hidden;
+	}
+	
+#adv_area .section01 .left_box .title01 p{
+	padding-left: 20px;
+	background: url(../images/cat/arrow.gif) 6px 4px no-repeat;
+	}
+	
+
+#adv_area .section01 .left_box .text_box p{
+	width: 155px;
+	padding-left: 55px;
+	}
+
+#adv_area .section01 .left_box .text_box p#tenshoku{
+	background: url(../images/cat/icon01.gif) 3px 3px no-repeat;
+	}
+
+#adv_area .section01 .left_box .text_box p#sukauto{
+	background: url(../images/cat/icon02.gif) 3px 3px no-repeat;
+	}
+
+#adv_area .section01 #onayami.left_box{
+	margin-right: 0;
+	border: 0;
+	}
+
+#adv_area .section01 #onayami.left_box .text_box p{
+	background: url(../images/cat/icon03.gif) 3px 3px no-repeat;
+	}
+
+#text_box_area{
+	width: 670px;
+	min-height: 200px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-left: 10px;
+	border: 10px solid #ddd;
+}
+

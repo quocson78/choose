@@ -1,0 +1,41 @@
+<div style="text-align: center; padding: 10px">
+<?php if ($this->pageCount > 1): ?>
+  <!-- 前ページへのリンク -->
+  <?php if (($this->firstPageInRange-1)>=1): ?>
+    [<a <?php if (isset($this->url_search)) {?>
+      href="<?= $this->url_search.'?page='.($this->firstPageInRange-1) ?>"
+    <?php }else {?>
+      onclick="onClickPage(<?= ($this->firstPageInRange-1) ?>)" style="cursor: pointer;"
+    <?php } ?>
+    >
+      ...
+    </a>]&nbsp;&nbsp;&nbsp;&nbsp;
+  <?php endif; ?>
+ 
+  <!-- ページ番号のリンク -->
+  <?php foreach ($this->pagesInRange as $page): ?>
+    <?php if ($page != $this->current): ?>
+     <a <?php if (isset($this->url_search)) {?>
+      href="<?= $this->url_search.'?page='.$page ?>"
+    <?php }else {?>
+      onclick="onClickPage(<?= $page ?>)" style="cursor: pointer;"
+    <?php } ?>
+    > <?php echo $page; ?>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php else: ?>
+      <?php echo $page; ?>&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif; ?>
+  <?php endforeach; ?>
+ 
+  <!-- 次ページへのリンク -->
+  <?php if (($this->lastPageInRange+1)<=$this->pageCount): ?>
+  [<a <?php if (isset($this->url_search)) {?>
+      href="<?= $this->url_search.'?page='.($this->lastPageInRange+1) ?>"
+    <?php }else {?>
+      onclick="onClickPage(<?= ($this->lastPageInRange+1) ?>)" style="cursor: pointer;"
+    <?php } ?>
+  > ...
+    </a>] 
+  <?php endif; ?>
+<?php endif; ?>
+</div>

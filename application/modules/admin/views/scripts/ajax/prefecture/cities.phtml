@@ -1,0 +1,4 @@
+<option value=''>選択してください</option>
+<?php foreach ($this->datas as $data): ?>
+    <option value="<?= $data['city_code']?>"><?= $data['city_name'] ?></option>
+<?php endforeach ?>

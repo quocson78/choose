@@ -1,0 +1,461 @@
+@charset "utf-8";
+
+/*#shopinfo esthe 
+-----------------------------------*/
+
+#contents_header_line{
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	overflow:hidden;
+}
+
+.contents_shopinfo{
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 760px;
+	overflow: hidden;
+}
+
+.oubo_button {
+	width: 745px;
+	min-height: 60px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.oubo_button p{
+	width: 330px;
+	margin-left: 420px;
+	float: left;
+	overflow: hidden;
+}
+
+
+.shop_info_top { background: #FBFFF8; border: 1px solid #ddd; overflow: hidden;}
+.shop_info_top .shop_info_h_box{ overflow: hidden;}
+.shop_info_top .iphoto{ width: 130px; margin-top: 10px; margin-left: 10px; float: left;}
+.shop_info_top .shop_info_center_box{ margin-left: 10px;}
+.shop_info_top .shop_info_center_box h2{ width: 360px; margin-top: 20px; float: left;}
+.shop_info_top .hurigana{}
+.shop_info_top .main_title{ font-size: 21px; font-weight: bold;}
+.shop_info_top .catch{ font-size: 14px;}
+.shop_info_top .add{ padding-top: 5px; border-top: 1px dotted #ddd;}
+.shop_info_top .shop_info_center_box ul{ margin-bottom: 15px; float: left;}
+.shop_info_top .shop_info_center_box li{ width: 60px; margin-top: 5px; margin-right:10px;  float: left;}
+.shop_info_top .right_box{width: 144px;  margin-right: 10px; float: right;}
+.shop_info_top .right_box li{margin-top: 10px;}
+.shop_info_top .right_box li a{
+	width: 144px;
+	height: 21px;
+	text-align:center;
+	line-height: 21px;
+	display: block;
+	background: url(../images/shopinfo/button_icon01.gif) no-repeat;
+}
+
+.shop_info_top .right_box li a:hover{
+	background: url(../images/shopinfo/button_icon01_on.gif) no-repeat;
+}
+
+
+
+
+.shop_info_top .tab_navi{}
+
+
+#tab_navi .oiwai{
+	width: 215px;
+	height: 27px;
+	padding-top: 1px;
+	margin-top: 15px;
+	margin-bottom:-10px;
+	margin-left: 532px;
+	background: url(../images/shoplist/oiwai.gif) no-repeat;
+}
+
+#tab_navi .oiwai p{
+	width: 60px;
+	height: 20px;
+	margin-left: 130px;
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color:#EF5A24;
+	font-family:"ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;
+}
+
+#tab_navi{ height:40px; margin-top: 90px; border-bottom: 4px solid #7100F3;}
+
+#tab_navi li{ float: left; margin-left: 5px;}
+#tab_navi li a{ display: block; height: 40px; text-indent: -9999px;}
+#tab_navi01 a{ width: 108px; background: url(../images/shopinfo/tab_navi.jpg) 0 0;}
+#tab_navi02 a{ width: 108px; background: url(../images/shopinfo/tab_navi.jpg) -113px 0;}
+#tab_navi03 a{ width: 143px; background: url(../images/shopinfo/tab_navi.jpg) -225px 0;}
+#tab_navi04 a{ width: 82px; background: url(../images/shopinfo/tab_navi.jpg) -372px 0;}
+
+#tab_navi01 a:hover{ width: 108px; background: url(../images/shopinfo/tab_navi.jpg) 0 -44px;}
+#tab_navi02 a:hover{ width: 108px; background: url(../images/shopinfo/tab_navi.jpg) -113px -44px;}
+#tab_navi03 a:hover{ width: 143px; background: url(../images/shopinfo/tab_navi.jpg) -225px -44px;}
+#tab_navi04 a:hover{ width: 82px; background: url(../images/shopinfo/tab_navi.jpg) -372px -44px;}
+
+
+.shop_info_center_area{
+	margin-top: 30px;
+	overflow: hidden;
+	}
+.shop_shokai_top_box{
+	overflow: hidden;
+	}
+	
+
+.shop_info_center_area .left_box{ width: 470px; float: left; overflow:hidden;}
+.shop_info_center_area .right_box{ width: 270px; float: left; url(../images/empro/point_t_bg.gif) repeat-x;}
+.shop_info_center_area .right_box h2{ font-size: 18px; font-weight: bold; color:#4E04B7; }
+.shop_info_center_area .right_box p{margin-top: 40px; font-size: 18px; font-weight: bold; color:#000;}
+
+.shop_info_center_area .left_box2{ width: 470px; float: left; overflow:hidden;}
+.shop_info_center_area .left_box2 ul{ margin-top: 15px; margin-bottom: 15px;}
+.shop_info_center_area .left_box2 li{ width: 80px; margin-right: 15px; float: left; overflow: hidden;}
+.shop_info_center_area .left_box2 li.last{ margin-right: 0;}
+.shop_info_center_area .right_box2{ width: 275px; margin-left: 5px; float: left;}
+.shop_info_center_area .right_box2 h2{ font-size: 18px; font-weight: bold; color:#4E04B7; }
+.shop_info_center_area .right_box2 h3{
+	height: 30px;
+	padding-left: 5px; 
+	font-size: 14px; 
+	color:#000; 
+	line-height: 26px;  
+	background:url(../images/empro/point_t_bg.gif) repeat-x; 
+	overflow: hidden;
+}
+.shop_info_center_area .right_box2 h3 span{padding-left:5px; font-weight: bold; color:#000;}
+
+
+
+.shop_info_center_area .cips{ width: 740px; float: left;}
+.shop_info_center_area .cips_title{}
+.shop_info_center_area .right_s_box{ overflow: hidden;}
+.shop_info_center_area .item01{ width: 130px; margin-left: 4px; font-size: 11px; font-weight: bold; float:left; overflow: hidden;}
+.shop_info_center_area .right_box2 ul{ margin-bottom: 25px; }
+.shop_info_center_area .item01 li{ height:30px; }
+.shop_info_center_area .item02 li{ padding-left:10px; }
+
+.second_center_area{
+	margin-top: 25px;
+	overflow: hidden;
+}
+
+.second_center_area h2{
+	width: 695px;
+	  height: 30px;
+	  margin-bottom: 20px; 
+	  padding-left: 45px; 
+	  background: #7100F3; 
+	  font-size: 18px; 
+	  line-height: 32px;
+	  font-weight: bold; 
+	  color: #fff;
+	  float: left;
+	  overflow: hidden;
+}
+#shashin_osusume h2{ background:#7100F3 url(../images/shopinfo/kamera.gif) 5px 2px no-repeat;}	  
+#shashin_osusume .contents_left{ width: 370px; margin-right: 10px;float: left; overflow:hidden;}
+#shashin_osusume .contents_right{ width: 370px; margin-left: 10px;float: left; overflow:hidden;}
+#shashin_osusume .descr{margin-bottom:15px; border: 1px solid #ddd; background: #F2F2F2; overflow: hidden;}
+#shashin_osusume .contents_left .descr{}
+#shashin_osusume .contents_left h3{}
+#shashin_osusume .descr p{ margin: 5px 5px 5px 10px; font-size: 14px;}
+#shashin_osusume .photo01{ }
+#shashin_osusume .shop_name { margin-top: 5px; margin-bottom:20px;}
+#shashin_osusume h3{
+	width:370px
+	margin-top: 22px;
+	margin-bottom: 10px; 
+	padding-bottom: 1px;
+	border-bottom: 1px solid #ddd;
+	  font-size: 16px; 
+	  font-weight: bold; 
+}
+
+#shop_shosai_area  h2{ background:#7100F3 url(../images/empro/icon05.gif) 10px 2px no-repeat;}	  
+#shop_shosai_area table{ width: 740px; margin-top: 40px; padding:7px;border-bottom: 1px solid #999;}
+#shop_shosai_area td{ padding:11px; border-top: 1px solid #999; background: #FBFFF7;}
+#shop_shosai_area td.left{ width: 90px; font-size: 14px; background: #F4F4F2;}
+#shop_shosai_area td.right{ width: 300px;}
+
+#message_area{ overflow: hidden;}
+#message_area .message_area_box{
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	background: #FBFFF7;
+overflow: hidden;
+}
+#message_area .message_area_box h3{
+	height: 20px;
+	padding-left: 10px;
+	padding-top: 2px;
+	font-size: 10px;
+	background: url(../images/shopinfo/message_icon.gif) no-repeat; 
+}
+#message_area .photo{ width: 110px; margin: 10px; float: left; overflow: hidden;}
+#message_area .contents_left{ 
+width: 150px; 
+height: 110px;
+margin-top: 10px; 
+padding-right: 10px; 
+border-right: 1px solid #ddd;
+float: left; 
+overflow: hidden;
+}
+
+#message_area .contents_right {
+	width: 450px;
+	float: left;
+	height: 110px;
+	}
+
+#message_area .contents_right p{
+	height: 110px;
+	margin-left: 30px;
+	margin-right: 15px;
+	margin-top: 10px;
+	}
+	
+
+
+#sonota_area {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+#sonota_area h2 {
+	  height: 30px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	  padding-left: 45px; 
+	  background: #7100F3  url(../images/shopinfo/home_icon.gif) 5px 0 no-repeat; 
+	  font-size: 18px; 
+	  line-height: 32px;
+	  font-weight: bold; 
+	  color: #fff;
+	  overflow: hidden;
+}
+.sonota_wrap {
+	border: 1px solid #ddd;
+	overflow: hidden;
+	background: #FBFFF7;
+}
+
+.sonota_box {
+	margin: 10px;
+	border-bottom: 1px dotted #ddd;
+	background: #FBFFF7;
+}
+.sonota_box h3 {
+	display:inline;
+	color:#6525C0;
+}
+
+#oubohouhou_area {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+#oubohouhou_area h2 {
+	  height: 30px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	  padding-left: 45px; 
+	  background: #7100F3  url(../images/empro/icon07.gif) 5px 0 no-repeat; 
+	  font-size: 18px; 
+	  line-height: 32px;
+	  font-weight: bold; 
+	  color: #fff;
+	  overflow: hidden;
+}
+.oubohouhou_wrap {
+	overflow: hidden;
+}
+
+.oubohouhou_wrap table{
+	width: 730px;
+	margin-left: 10px;
+	border-top: 1px solid #7B7473;
+}
+
+.oubohouhou_wrap table td{
+	padding: 15px 10px;
+	border-bottom: 1px solid #7B7473;
+	font-size: 14px;
+	background: #FBFFF7;
+}
+
+.oubohouhou_wrap table .left_box{
+	width: 145px;
+	border-right: 1px solid #ddd;
+	background: #F4F4F2;
+}
+
+#oiwaikinni_area {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+#oiwaikinni_area h2 {
+	  height: 30px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	  padding-left: 45px; 
+	  background: #FF7C00  url(../images/empro/icon06.gif) 5px 0 no-repeat; 
+	  font-size: 18px; 
+	  line-height: 32px;
+	  font-weight: bold; 
+	  color: #fff;
+	  overflow: hidden;
+}
+.oiwaikinni_wrap {
+	overflow: hidden;
+}
+
+.oiwaikinni_wrap table{
+	width: 730px;
+	margin-left: 10px;
+	border-top: 1px solid #7B7473;
+}
+
+.oiwaikinni_wrap table td{
+	padding: 15px 10px;
+	border-bottom: 1px solid #7B7473;
+	font-size: 14px;
+	background: #FBFFF7;
+}
+
+.oiwaikinni_wrap table .left_box{
+	width: 145px;
+	border-right: 1px solid #ddd;
+	background: #F4F4F2;
+}
+
+#shopinfo_bottom{ overflow: hidden;}
+#shopinfo_bottom h2{
+height: 30px;
+margin-bottom: 20px;  
+color:#7100F3;
+border:1px solid #7100F3;
+padding-left: 40px;
+line-height: 30px;
+font-weight: bold;
+font-size: 14px;
+background: url(../images/shopinfo/huki_icon.gif) 5px 5px no-repeat;
+}
+#shopinfo_bottom li{ width: 170px; float: left; margin-left: 15px; border: 1px solid #ddd; background:#FBFFF7;}
+#shopinfo_bottom .photo{ margin-top: 10px; margin-left:15px;}
+#shopinfo_bottom p{ margin-top: 10px; margin-left:15px; margin-bottom: 15px; font-size: 11px;}
+#shopinfo_bottom h3{ width: 140px; margin-top: 10px; margin-left:15px; font-size: 11px;}
+
+/*#sub_info
+-----------------------------------*/
+
+
+#shop_sub_info{
+	width: 175px;
+	margin-left: 20px;
+	float: left;
+	overflow:hidden;
+}
+
+#shop_touroku_form_box{
+	width: 175px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	border: 1px solid #E900BD;
+	overflow: hidden;
+}
+
+.shop_logo_box01{
+	margin-top: 22px;
+	margin-left: 14px;
+}
+
+.shop_kousin{
+	height: 25px;
+	margin-left: 20px;
+	padding-left: 23px;
+	padding-top: 10px;
+	font-size: 14px;
+	background: url(../images/toppage/t_icon03.png) no-repeat left;
+}
+
+#shop_touroku_form_box ul{
+	margin-left: 5px;
+	margin-bottom: 16px;
+	font-size: 14px;
+	color: #333;
+}
+
+#shop_touroku_form_box li{
+	margin-top: 10px;
+	vertical-align: bottom;
+}
+
+#shop_touroku_form_box td{
+	padding-top: 5px;
+}
+
+.shop_counter01 { 
+	margin-left: 5px;
+	font-size: 24px;
+	font-weight: bold;
+	color:#FF6600;
+	font-family:"ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;
+}
+
+.shop_user_login01{
+	width: 160px;
+	height: 30px;
+}
+
+.shop_user_login02{
+	width: 85px;
+	height: 32px;
+	border: 0;
+	margin-left: -5px;
+	text-indent: -9999px;
+	background: url(../images/toppage/s_form_icon01.gif) no-repeat ;
+}
+
+.shop_user_login03{
+	width: 85px;
+	height: 32px;
+	margin-left: 4px;
+	border: 0;
+	text-indent: -9999px;
+	background: url(../images/toppage/s_form_icon02.gif) no-repeat ;
+}
+
+.shop_text_box01{
+	height: 23px;
+	width: 160px;
+}
+
+
+#photo_g { margin-top: 30px;}
+#photo_g li{ width: 230px; float:left; margin:10px; overflow:hidden; font-size: 10px;}
+#photo_g li img{ border: 1px solid #ddd;}
+#photo_g li p{ margin-top: 10px;}
+#photo_g .photo_g_box{ width: 210px; margin 10px;}
+
+.shop_box .shop_footer_box p{
+	width: 690px;
+	margin: 3px;
+	padding:5px 5px;
+	font-size: 10px;
+	background: #f0f0f0;
+}
+
+
+/*#enpro
+-----------------------------------*/
+
